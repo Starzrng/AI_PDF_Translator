@@ -1,17 +1,22 @@
 # OS
 .DS_Store
 
-# Heavy binaries stay out of git (input PDFs, built outputs, render scratch)
-input/*.pdf
-output/
+# Binaries stay local: source manuals, built PDFs, render scratch
+*.pdf
+jobs/*/out/
+jobs/*/build/
 tmp/
+**/blocks.txt
+jobs/xm100/extract/img/
+jobs/xm100/hmi/out/
 
 # Python
 __pycache__/
 *.pyc
+*.egg-info/
 .venv/
 venv/
 .pytest_cache/
 
-# Keep translation manifests and glossaries in git — they are the product data
-!translations/**
+# Local agent settings
+.claude/settings.local.json

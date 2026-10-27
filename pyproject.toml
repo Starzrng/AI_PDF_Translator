@@ -1,10 +1,23 @@
 [project]
 name = "pdf-translator"
-version = "0.1.0"
-description = "Agent-assisted Russian PDF translation builders"
+version = "0.2.0"
+description = "Agent-assisted layout-preserving PDF translation to Russian"
 requires-python = ">=3.10"
 dependencies = [
+    # blocks.json indices depend on the PyMuPDF version (see AGENTS.md)
+    "pymupdf==1.28.2",
+    "pillow>=10",
+    # legacy jobs: d400-hs, raystudio-1.7, eagle-1.6
     "pypdf>=6.0",
-    "pymupdf>=1.28",
     "reportlab>=4.0",
 ]
+
+[project.optional-dependencies]
+xm100 = ["playwright>=1.62"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["pdft"]

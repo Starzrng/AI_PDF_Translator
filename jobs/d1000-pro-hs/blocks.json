@@ -1,0 +1,3712 @@
+[
+{
+"pg": 1,
+"bi": 0,
+"bbox": [
+162.0,
+598.0,
+430.0,
+631.3
+],
+"sz": 24.0,
+"col": 0,
+"bold": true,
+"t": "D1000 Pro HS User Manual"
+},
+{
+"pg": 1,
+"bi": 1,
+"bbox": [
+282.0,
+643.3,
+326.9,
+676.6
+],
+"sz": 24.0,
+"col": 0,
+"bold": true,
+"t": "V1.0"
+},
+{
+"pg": 2,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+72.4,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第1 页共26 页"
+},
+{
+"pg": 2,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+507.7,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "1 / 30"
+},
+{
+"pg": 2,
+"bi": 2,
+"bbox": [
+90.0,
+89.6,
+372.2,
+111.7
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Thank you for choosing Creatbot products."
+},
+{
+"pg": 2,
+"bi": 3,
+"bbox": [
+90.0,
+129.7,
+505.4,
+237.4
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "• Read Before Use: For your convenience and safety, please read this manual carefully before operating the device and strictly follow the instructions provided. • Technical Support: If you encounter any issues or content not covered in this manual, please contact your sales consultant or our technical support team at: support@creatbot.com. • Online Resources: You can also visit the official CreatBot website at www.creatbot.com to find information regarding software and hardware updates, contact details, device operation, and maintenance."
+},
+{
+"pg": 2,
+"bi": 4,
+"bbox": [
+90.0,
+255.9,
+326.3,
+278.0
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Pre-Use Notice / Safety Instructions"
+},
+{
+"pg": 2,
+"bi": 5,
+"bbox": [
+90.0,
+296.2,
+505.2,
+388.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "To ensure the safe operation and optimal performance of the printer, please read the following precautions carefully before use: • Operating Environment: This 3D printer is designed to operate in an indoor environment between 5°C and 30°C. • Emergency Stop: In case of any emergency during operation, please press the red emergency stop button immediately."
+},
+{
+"pg": 2,
+"bi": 6,
+"bbox": [
+90.0,
+403.8,
+502.4,
+449.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "• Power Requirements: The voltage and power supply must match the printer's specifications to avoid equipment damage or safety risks. Please check the label on the back of the printer for specific voltage and power parameters."
+},
+{
+"pg": 2,
+"bi": 7,
+"bbox": [
+90.0,
+464.5,
+494.6,
+509.8
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "• High-Temperature & High-Speed Warning: This printer is a high-temperature, high-speed device. Avoid operation by children or unauthorized personnel to prevent burns, pinch point injuries, or other hazards."
+},
+{
+"pg": 2,
+"bi": 8,
+"bbox": [
+90.0,
+525.4,
+491.7,
+555.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "• Moving Parts: Do not touch the extruder, heat bed, or other moving components during the printing process to prevent burns or mechanical injury."
+},
+{
+"pg": 2,
+"bi": 9,
+"bbox": [
+90.0,
+570.6,
+488.6,
+600.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "• Stability: Once the printer is positioned, please lower the anti-slip leveling feet to make full contact with the ground to prevent shaking or sliding during operation."
+},
+{
+"pg": 2,
+"bi": 10,
+"bbox": [
+90.0,
+615.7,
+494.4,
+645.8
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "• Power Cord Safety: Use only the power cord provided with this machine. Do not substitute it with third-party cables. The power plug must be connected to a grounded 3-prong outlet."
+},
+{
+"pg": 2,
+"bi": 11,
+"bbox": [
+90.0,
+661.0,
+491.0,
+706.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "• Filament Recommendations: We recommend using CreatBot filaments for the best printing results. Third-party filaments may cause quality issues and require manual optimization of temperature and software parameters."
+},
+{
+"pg": 2,
+"bi": 12,
+"bbox": [
+90.0,
+721.8,
+482.8,
+751.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "• Stable Environment: Do not place the printer in environments with significant vibration or instability, as shaking will severely degrade print quality."
+},
+{
+"pg": 3,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+72.4,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第2 页共26 页"
+},
+{
+"pg": 3,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+507.7,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "2 / 30"
+},
+{
+"pg": 3,
+"bi": 2,
+"bbox": [
+90.0,
+72.6,
+501.0,
+118.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "• Maintenance: To ensure normal operation, regular maintenance is recommended. Use a clean cloth to wipe down the machine body, remove dust, adhesive residue, and debris from the guide rails. Periodically lubricate the X, Y, and Z axes."
+},
+{
+"pg": 3,
+"bi": 3,
+"bbox": [
+90.0,
+133.3,
+502.7,
+194.2
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "• Legal Compliance: Users must comply with the laws and regulations of the country or region where the equipment is used, uphold professional ethics, and fulfill safety obligations. It is strictly forbidden to use our products for any illegal purposes. CreatBot shall not be held liable for any legal consequences resulting from violations."
+},
+{
+"pg": 3,
+"bi": 4,
+"bbox": [
+100.4,
+225.4,
+369.5,
+255.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "NOTE Supplementary information and explanations for the main text."
+},
+{
+"pg": 3,
+"bi": 5,
+"bbox": [
+100.4,
+272.2,
+505.3,
+317.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "TIPS Suggestions to optimize operation, improve efficiency, or enhance convenience, helping you use the printer more effectively."
+},
+{
+"pg": 3,
+"bi": 6,
+"bbox": [
+100.4,
+334.6,
+505.1,
+379.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "CAUTION Operational precautions that may affect print quality or equipment performance. Please handle with care to avoid potential issues."
+},
+{
+"pg": 3,
+"bi": 7,
+"bbox": [
+100.4,
+397.0,
+505.2,
+442.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "DANGER Potential risks exist. Failure to comply may result in equipment damage or serious injury to the user. Please strictly follow all related guidelines."
+},
+{
+"pg": 4,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+72.4,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第3 页共26 页"
+},
+{
+"pg": 4,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+507.7,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "3 / 30"
+},
+{
+"pg": 4,
+"bi": 2,
+"bbox": [
+234.0,
+76.6,
+367.8,
+99.4
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Table of Contents"
+},
+{
+"pg": 4,
+"bi": 3,
+"bbox": [
+111.0,
+132.5,
+505.2,
+146.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Product Introduction.................................................................................................................. 4"
+},
+{
+"pg": 4,
+"bi": 4,
+"bbox": [
+111.0,
+148.1,
+505.3,
+193.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "External Components......................................................................................................... 4 Specifications.............................................................................................................................. 7 UI Interface Introduction............................................................................................................ 8"
+},
+{
+"pg": 4,
+"bi": 5,
+"bbox": [
+111.0,
+194.9,
+505.3,
+520.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Home Page..........................................................................................................................8 Preheat................................................................................................................................8 Filament Drying...................................................................................................................9 Axis Control.........................................................................................................................9 HOME................................................................................................................................10 Filament Page................................................................................................................... 11 Print File Selection............................................................................................................11 Settings Page.....................................................................................................................12 Bed Mesh..........................................................................................................................12 Printer Limits.....................................................................................................................13 Fan Settings.......................................................................................................................14 Macros.............................................................................................................................. 14 Maintenance.....................................................................................................................15 Advanced Settings............................................................................................................ 16 Advanced Settings............................................................................................................ 17 Wi-Fi Network Settings.....................................................................................................18 Network Settings.............................................................................................................. 19 Cloud.................................................................................................................................19 Print Page..........................................................................................................................20 Fine Tuning........................................................................................................................20 Machine Calibration..................................................................................................................22"
+},
+{
+"pg": 4,
+"bi": 6,
+"bbox": [
+111.0,
+522.5,
+505.2,
+583.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Input Shaper..................................................................................................................... 22 Probe Offset Calibration................................................................................................... 22 Offset Manage.................................................................................................................. 23 Ready to print........................................................................................................................... 25"
+},
+{
+"pg": 4,
+"bi": 7,
+"bbox": [
+132.0,
+584.9,
+505.2,
+676.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Software Downloads.........................................................................................................25 Slicer Software Configuration...........................................................................................25 Connect the printer to the slicing software..................................................................... 26 Introduction to the Slicing Process...................................................................................26 Print File (Send Online).....................................................................................................28 Print File (Offline Printing)................................................................................................29"
+},
+{
+"pg": 5,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+72.4,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第4 页共26 页"
+},
+{
+"pg": 5,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+507.7,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "4 / 30"
+},
+{
+"pg": 5,
+"bi": 2,
+"bbox": [
+218.0,
+76.6,
+376.1,
+99.4
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Product Introduction"
+},
+{
+"pg": 5,
+"bi": 3,
+"bbox": [
+90.0,
+120.8,
+232.4,
+142.9
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "External Components"
+},
+{
+"pg": 5,
+"bi": 4,
+"bbox": [
+270.5,
+487.5,
+324.8,
+504.2
+],
+"sz": 12.0,
+"col": 0,
+"bold": true,
+"t": "Front View"
+},
+{
+"pg": 5,
+"bi": 5,
+"bbox": [
+93.0,
+520.7,
+373.6,
+534.7
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "1 Extruder 2 Heated Bed"
+},
+{
+"pg": 5,
+"bi": 6,
+"bbox": [
+93.0,
+536.8,
+377.1,
+550.8
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "3 Status Light 4 Touchscreen"
+},
+{
+"pg": 5,
+"bi": 7,
+"bbox": [
+93.0,
+552.8,
+374.8,
+566.8
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "5 Circuit Compartment 6 Start Switch"
+},
+{
+"pg": 5,
+"bi": 8,
+"bbox": [
+93.0,
+568.9,
+385.8,
+582.9
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "7 LAN Port 8 USB Flash Port"
+},
+{
+"pg": 5,
+"bi": 9,
+"bbox": [
+93.0,
+585.1,
+423.4,
+599.1
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "9 Key Switch 10 Filament Compartment"
+},
+{
+"pg": 5,
+"bi": 10,
+"bbox": [
+90.7,
+601.2,
+380.9,
+615.2
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "11 Emergency Stop Button 12 Caster Wheel"
+},
+{
+"pg": 6,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+72.4,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第5 页共26 页"
+},
+{
+"pg": 6,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+507.7,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "5 / 30"
+},
+{
+"pg": 6,
+"bi": 2,
+"bbox": [
+272.4,
+430.3,
+322.9,
+446.9
+],
+"sz": 12.0,
+"col": 0,
+"bold": true,
+"t": "Rear View"
+},
+{
+"pg": 6,
+"bi": 3,
+"bbox": [
+93.0,
+463.4,
+413.0,
+477.4
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "1 Air Filtration Outlet 2 Printer Power Switch"
+},
+{
+"pg": 6,
+"bi": 4,
+"bbox": [
+93.0,
+479.5,
+425.4,
+493.5
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "3 Chamber Heating Power Switch 4 Printer Power Cord Port"
+},
+{
+"pg": 6,
+"bi": 5,
+"bbox": [
+93.0,
+495.7,
+281.3,
+509.7
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "5 Chamber Heating Power Cable Interface"
+},
+{
+"pg": 7,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+72.4,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第6 页共26 页"
+},
+{
+"pg": 7,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+507.7,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "6 / 30"
+},
+{
+"pg": 7,
+"bi": 2,
+"bbox": [
+276.1,
+367.9,
+319.1,
+384.5
+],
+"sz": 12.0,
+"col": 0,
+"bold": true,
+"t": "Extruder"
+},
+{
+"pg": 7,
+"bi": 3,
+"bbox": [
+93.0,
+401.0,
+386.2,
+415.0
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "1 Cold Air Duct 2 Extruder Hood"
+},
+{
+"pg": 7,
+"bi": 4,
+"bbox": [
+93.0,
+417.1,
+393.4,
+431.1
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "3 Nozzle Servo 4 Extrusion Motor"
+},
+{
+"pg": 7,
+"bi": 5,
+"bbox": [
+93.0,
+433.3,
+359.0,
+447.3
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "5 Filament Pressure Nut 6 Sink Fan"
+},
+{
+"pg": 7,
+"bi": 6,
+"bbox": [
+93.0,
+449.4,
+386.0,
+463.4
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "7 Quick-Release Hotend 8 Nozzle Shutter"
+},
+{
+"pg": 7,
+"bi": 7,
+"bbox": [
+93.0,
+465.5,
+387.0,
+479.5
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "9 Eddy Current Leveling 10 Cold Air Outlet"
+},
+{
+"pg": 7,
+"bi": 8,
+"bbox": [
+174.0,
+714.1,
+394.3,
+730.7
+],
+"sz": 12.0,
+"col": 0,
+"bold": true,
+"t": "Nozzle Cleaning Brush/Camera AI Alignment"
+},
+{
+"pg": 7,
+"bi": 9,
+"bbox": [
+93.0,
+747.2,
+414.1,
+761.2
+],
+"sz": 9.0,
+"col": 0,
+"bold": false,
+"t": "1 Nozzle Cleaning Brush 2 Camera AI Alignment"
+},
+{
+"pg": 8,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+72.4,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第7 页共26 页"
+},
+{
+"pg": 8,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+507.7,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "7 / 30"
+},
+{
+"pg": 8,
+"bi": 2,
+"bbox": [
+90.0,
+76.6,
+198.3,
+99.4
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Specifications"
+},
+{
+"pg": 8,
+"bi": 3,
+"bbox": [
+282.8,
+116.7,
+320.4,
+132.7
+],
+"sz": 11.5,
+"col": 2172201,
+"bold": true,
+"t": "Printing"
+},
+{
+"pg": 8,
+"bi": 4,
+"bbox": [
+130.4,
+133.9,
+465.0,
+147.9
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Print Technology FDM/FFF"
+},
+{
+"pg": 8,
+"bi": 5,
+"bbox": [
+137.5,
+150.4,
+479.1,
+172.2
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Build Volume Single Extrusion: 1050 x 1050 x 1050mm"
+},
+{
+"pg": 8,
+"bi": 6,
+"bbox": [
+314.2,
+166.0,
+479.7,
+180.0
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Dual Extrusion: 995 x 1050 x 1050mm"
+},
+{
+"pg": 8,
+"bi": 7,
+"bbox": [
+125.4,
+182.3,
+392.8,
+196.3
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Number of Nozzles Double"
+},
+{
+"pg": 8,
+"bi": 8,
+"bbox": [
+126.1,
+198.6,
+396.3,
+212.6
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Filament Diameter 1.75 mm"
+},
+{
+"pg": 8,
+"bi": 9,
+"bbox": [
+117.6,
+214.9,
+504.2,
+236.7
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Filament Compatibility PLA, ABS, ASA, PETG, PC, Nylon, TPU, ABS-CF, PC-CF, PET-CF,"
+},
+{
+"pg": 8,
+"bi": 10,
+"bbox": [
+312.5,
+230.5,
+442.4,
+244.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "PET-GF, UltraPA-CF, PPS-CF, etc"
+},
+{
+"pg": 8,
+"bi": 11,
+"bbox": [
+130.8,
+247.0,
+422.6,
+278.4
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": true,
+"t": "Nozzle Diameter 0.8 mm (0.3-1.0 mm) Temperature"
+},
+{
+"pg": 8,
+"bi": 12,
+"bbox": [
+112.8,
+279.6,
+391.8,
+293.8
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Max Nozzle Temperature 420 ℃"
+},
+{
+"pg": 8,
+"bi": 13,
+"bbox": [
+117.4,
+295.9,
+391.8,
+310.2
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Max. Bed Temperature 120 ℃"
+},
+{
+"pg": 8,
+"bi": 14,
+"bbox": [
+108.8,
+312.4,
+389.2,
+326.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Hot Chamber Temperature 80 ℃"
+},
+{
+"pg": 8,
+"bi": 15,
+"bbox": [
+96.4,
+328.7,
+394.6,
+359.7
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Filament Dry Room Temperature 0 -70 ℃ Speed"
+},
+{
+"pg": 8,
+"bi": 16,
+"bbox": [
+130.8,
+361.3,
+399.0,
+375.3
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Max Print Speed 300 mm/s"
+},
+{
+"pg": 8,
+"bi": 17,
+"bbox": [
+144.8,
+377.8,
+397.3,
+409.2
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": true,
+"t": "Flow Rate 90 mm³/s Electrical"
+},
+{
+"pg": 8,
+"bi": 18,
+"bbox": [
+121.3,
+410.4,
+422.0,
+424.4
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Power Requirements 220~240 V, 50~60 Hz"
+},
+{
+"pg": 8,
+"bi": 19,
+"bbox": [
+150.6,
+426.7,
+507.9,
+448.5
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Display 10-inch full color touch screen independent operating system"
+},
+{
+"pg": 8,
+"bi": 20,
+"bbox": [
+342.2,
+442.3,
+412.5,
+456.3
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "(multi-language)"
+},
+{
+"pg": 8,
+"bi": 21,
+"bbox": [
+138.7,
+458.8,
+449.2,
+472.8
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Rated Power Printer: 6000W, Chamber: 6000W"
+},
+{
+"pg": 8,
+"bi": 22,
+"bbox": [
+140.0,
+475.1,
+412.9,
+506.5
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": true,
+"t": "File Transfer USB / WiFi / LAN Special Function"
+},
+{
+"pg": 8,
+"bi": 23,
+"bbox": [
+148.4,
+507.7,
+406.6,
+521.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Air filter HEPA+Carbon"
+},
+{
+"pg": 8,
+"bi": 24,
+"bbox": [
+113.9,
+524.2,
+423.7,
+538.2
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Bed Leveling Technology Eddy Current Leveling"
+},
+{
+"pg": 8,
+"bi": 25,
+"bbox": [
+121.2,
+540.5,
+441.7,
+554.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "XY Offset Technology HD Camera Dual Nozzle Offset"
+},
+{
+"pg": 8,
+"bi": 26,
+"bbox": [
+114.0,
+556.8,
+413.0,
+570.8
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Door Opening Detection Safety Door Lock"
+},
+{
+"pg": 8,
+"bi": 27,
+"bbox": [
+124.0,
+573.1,
+384.2,
+604.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "External Air Cooling Yes Mechanical"
+},
+{
+"pg": 8,
+"bi": 28,
+"bbox": [
+143.2,
+605.9,
+432.1,
+619.9
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Build Plate Aviation Aluminum Plates"
+},
+{
+"pg": 8,
+"bi": 29,
+"bbox": [
+124.6,
+622.2,
+399.6,
+636.2
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Build Plate Leveling Automatic"
+},
+{
+"pg": 8,
+"bi": 30,
+"bbox": [
+147.5,
+638.5,
+422.6,
+652.5
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Extruder Smart Dual Extruders"
+},
+{
+"pg": 8,
+"bi": 31,
+"bbox": [
+117.4,
+655.0,
+384.2,
+669.0
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Auto-Raising Extruders Yes"
+},
+{
+"pg": 8,
+"bi": 32,
+"bbox": [
+113.3,
+671.3,
+398.9,
+685.3
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "X/Y Positioning Precision 0.011 mm"
+},
+{
+"pg": 8,
+"bi": 33,
+"bbox": [
+118.2,
+687.6,
+401.6,
+701.6
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Z Positioning Precision 0.0025 mm"
+},
+{
+"pg": 8,
+"bi": 34,
+"bbox": [
+132.1,
+703.9,
+431.3,
+735.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "Z-Axis Structure Independent Quad-Z Axis Size & Weight"
+},
+{
+"pg": 8,
+"bi": 35,
+"bbox": [
+101.9,
+736.7,
+441.0,
+750.7
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Product Dimensions & Weight 1870 x 1430 x 1940mm 675kg"
+},
+{
+"pg": 8,
+"bi": 36,
+"bbox": [
+119.0,
+753.0,
+441.0,
+767.0
+],
+"sz": 10.4,
+"col": 2172201,
+"bold": false,
+"t": "Packing Size & Weight 2070 x 1610 x 2240mm 892kg"
+},
+{
+"pg": 9,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+72.4,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第8 页共26 页"
+},
+{
+"pg": 9,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+507.7,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "8 / 30"
+},
+{
+"pg": 9,
+"bi": 2,
+"bbox": [
+202.0,
+76.6,
+386.8,
+99.4
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "UI Interface Introduction"
+},
+{
+"pg": 9,
+"bi": 3,
+"bbox": [
+90.0,
+121.3,
+146.2,
+137.9
+],
+"sz": 12.0,
+"col": 0,
+"bold": true,
+"t": "Home Page"
+},
+{
+"pg": 9,
+"bi": 4,
+"bbox": [
+90.0,
+375.0,
+502.9,
+467.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "1. Menu Bar : Switch between different functional pages. 2. Temperature Overview : Quickly monitor/set temperatures for Nozzle 1, Nozzle 2, Heat Bed, Chamber, and Filament Dry Box. 3. Preheat : Rapidly set preheating temperatures for various materials (PLA, ABS, PETG, etc.) 4. Unlock : Unlock the printer chamber door. 5.Heating Curve : Long press to enlarge and observe the temperature rise/fall graph."
+},
+{
+"pg": 9,
+"bi": 5,
+"bbox": [
+90.0,
+485.6,
+142.1,
+507.7
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Preheat"
+},
+{
+"pg": 9,
+"bi": 6,
+"bbox": [
+90.0,
+744.2,
+240.4,
+758.2
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Click the material name to preheat."
+},
+{
+"pg": 10,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+72.4,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第9 页共26 页"
+},
+{
+"pg": 10,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+507.7,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "9 / 30"
+},
+{
+"pg": 10,
+"bi": 2,
+"bbox": [
+90.0,
+71.6,
+277.5,
+87.7
+],
+"sz": 12.0,
+"col": 0,
+"bold": false,
+"t": "Tap \"Cooldown\" to turn off all heaters."
+},
+{
+"pg": 10,
+"bi": 3,
+"bbox": [
+111.0,
+103.8,
+366.2,
+133.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "NOTE Preheating only quickly heats up Nozzle 1 and the Heat Bed."
+},
+{
+"pg": 10,
+"bi": 4,
+"bbox": [
+90.0,
+152.0,
+195.2,
+174.1
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Filament Drying"
+},
+{
+"pg": 10,
+"bi": 5,
+"bbox": [
+90.0,
+394.9,
+491.6,
+471.8
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "1. Filament Chamber Temperature Setting. 2. Filament Chamber Heating Timer. 3. When enabled, the filament chamber heating will automatically turn off after the print task ends. 4. Filament Chamber Real-time Temperature."
+},
+{
+"pg": 10,
+"bi": 6,
+"bbox": [
+90.0,
+489.9,
+170.1,
+512.0
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Axis Control"
+},
+{
+"pg": 10,
+"bi": 7,
+"bbox": [
+90.0,
+748.6,
+225.1,
+763.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "1. Tap to enter the Home page."
+},
+{
+"pg": 11,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第10 页共26 页"
+},
+{
+"pg": 11,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "10 / 30"
+},
+{
+"pg": 11,
+"bi": 2,
+"bbox": [
+90.0,
+72.6,
+508.0,
+102.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "2. Enable Motors: Tap to obtain coordinate information for X/Y/Z axes, allowing movement in X, Y, and Z directions."
+},
+{
+"pg": 11,
+"bi": 3,
+"bbox": [
+100.4,
+103.9,
+388.8,
+117.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Disable Motor: Tap to allow manual movement of X/Y axes by hand."
+},
+{
+"pg": 11,
+"bi": 4,
+"bbox": [
+90.0,
+135.0,
+505.2,
+180.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "NOTE When the X/Y/Z axis coordinates display a \"?\" symbol, the axes cannot be moved via screen control."
+},
+{
+"pg": 11,
+"bi": 5,
+"bbox": [
+90.0,
+197.4,
+505.3,
+227.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "CAUTION After enabling the motors, the X/Y/Z coordinate information is incorrect. Please pay attention to"
+},
+{
+"pg": 11,
+"bi": 6,
+"bbox": [
+90.0,
+229.4,
+306.5,
+243.4
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "the actual position of the extruder before moving."
+},
+{
+"pg": 11,
+"bi": 7,
+"bbox": [
+90.0,
+259.8,
+348.6,
+289.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "3. X/Y/Z Axis Coordinates. 4. Move Distance: Set the distance for each movement step."
+},
+{
+"pg": 11,
+"bi": 8,
+"bbox": [
+90.0,
+308.0,
+132.6,
+330.1
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "HOME"
+},
+{
+"pg": 11,
+"bi": 9,
+"bbox": [
+90.0,
+551.0,
+505.4,
+627.4
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Single Axis Home: Use this to home/lock a specific axis if needed. Home All: Tap to perform an automatic homing sequence for X, Y, and Z axes. Home XY: Use this option if only the X and Y axes need to be homed. Quad Gantry Level: If the print bed is noticeably tilted, tap this option for the machine to automa tically calibrate the printing plane."
+},
+{
+"pg": 12,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第11 页共26 页"
+},
+{
+"pg": 12,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "11 / 30"
+},
+{
+"pg": 12,
+"bi": 2,
+"bbox": [
+90.0,
+76.5,
+183.3,
+98.6
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Filament Page"
+},
+{
+"pg": 12,
+"bi": 3,
+"bbox": [
+90.0,
+319.6,
+292.6,
+365.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "1. Tap to switch to Nozzle 1 / Set Temperature. 2. Tap to switch to Nozzle 2 / Set Temperature. 3. Set / Adjust Pressure Advance Default Value."
+},
+{
+"pg": 12,
+"bi": 4,
+"bbox": [
+90.0,
+382.0,
+505.2,
+427.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "TIPS The parameters set on the screen will be overwritten by the filament settings in the slicing software."
+},
+{
+"pg": 12,
+"bi": 5,
+"bbox": [
+90.0,
+444.4,
+312.4,
+521.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "4. Tap to enter the Preheat page. 5. Tap to extrude filament from the extruder. 6. Tap to retract/unload filament from the extruder. 7. Nozzle 1 Filament Status. 8. Nozzle 2 Filament Status."
+},
+{
+"pg": 12,
+"bi": 6,
+"bbox": [
+90.0,
+539.3,
+213.6,
+561.5
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Print File Selection"
+},
+{
+"pg": 13,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第12 页共26 页"
+},
+{
+"pg": 13,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "12 / 30"
+},
+{
+"pg": 13,
+"bi": 2,
+"bbox": [
+90.0,
+72.6,
+505.3,
+149.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "1. Print File Selection: Tap the file and complete the secondary confirmation to start printing. 2. Manual Refresh: If the list does not refresh automatically after inserting a USB drive or sending a file, you can refresh it manually. 3. Display Mode Switch: Toggle between detail list mode and preview mode (the image shows preview mode)."
+},
+{
+"pg": 13,
+"bi": 3,
+"bbox": [
+90.0,
+167.6,
+178.2,
+189.7
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Settings Page"
+},
+{
+"pg": 13,
+"bi": 4,
+"bbox": [
+90.0,
+411.9,
+156.0,
+434.0
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Bed Mesh"
+},
+{
+"pg": 13,
+"bi": 5,
+"bbox": [
+90.0,
+655.0,
+463.3,
+716.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "1. Clear the currently loaded bed mesh data. 2. Tap \"Calibrate\" and the printer will automatically perform a bed level scan. 3. Tap to view bed mesh probing data and rename it. 4. Delete Data: The delete option will permanently remove the bed mesh probing data."
+},
+{
+"pg": 14,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第13 页共26 页"
+},
+{
+"pg": 14,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "13 / 30"
+},
+{
+"pg": 14,
+"bi": 2,
+"bbox": [
+90.0,
+76.5,
+178.7,
+98.6
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Printer Limits"
+},
+{
+"pg": 14,
+"bi": 3,
+"bbox": [
+90.0,
+319.6,
+507.8,
+520.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "Max Acceleration : This parameter determines the acceleration curve from low to high speed during linear motion. Higher max acceleration leads to faster initial movement. Since the weight of the extruder determines the inertia, excessively high acceleration can cause severe vibrations and risks of motor errors. (Default: 5000mm/s²). Max Velocity : This parameter limits the maximum movement speed of the X/Y axes. The actual printing speed will not exceed this setting, and the device can only operate at speeds below this maximum value. (Default: 300mm/s). Minimum Cruise Ratio : This parameter acts as the braking speed. When an axis needs to change direction suddenly or stop quickly, a higher value results in faster braking. However, due to inertia, a higher value may cause machine vibration and motor errors. (Default: 50%). Square Corner Velocity : This parameter determines the turning speed of the X/Y axes. A larger value results in faster directional changes. If this value is too high, it will also cause machine vibration and motor errors due to inertia. (Default: 5mm/s)."
+},
+{
+"pg": 14,
+"bi": 4,
+"bbox": [
+90.0,
+538.0,
+505.2,
+583.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "CAUTION This is an advanced parameter. Please only make changes under the guidance of after-sales support or a professional technician."
+},
+{
+"pg": 15,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第14 页共26 页"
+},
+{
+"pg": 15,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "14 / 30"
+},
+{
+"pg": 15,
+"bi": 2,
+"bbox": [
+90.0,
+76.5,
+169.8,
+98.6
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Fan Settings"
+},
+{
+"pg": 15,
+"bi": 3,
+"bbox": [
+90.0,
+319.6,
+282.6,
+349.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "Cooling Fan: Used for printing model cooling. Chamber Fan: Chamber HEPA exhaust fan."
+},
+{
+"pg": 15,
+"bi": 4,
+"bbox": [
+90.0,
+367.7,
+139.1,
+389.9
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Macros"
+},
+{
+"pg": 15,
+"bi": 5,
+"bbox": [
+145.6,
+611.4,
+453.9,
+625.4
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Name Type Usage / Purpose"
+},
+{
+"pg": 15,
+"bi": 6,
+"bbox": [
+95.4,
+627.5,
+471.8,
+641.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Adaptive_Mash Calibration Adaptive Bed Calibration"
+},
+{
+"pg": 15,
+"bi": 7,
+"bbox": [
+95.4,
+643.6,
+444.7,
+657.6
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "CANCEL_PRINT Macro Cancel print"
+},
+{
+"pg": 15,
+"bi": 8,
+"bbox": [
+95.4,
+659.6,
+449.9,
+673.6
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "ENABLE_MOTOR Macro Enable motors"
+},
+{
+"pg": 15,
+"bi": 9,
+"bbox": [
+95.4,
+675.7,
+438.6,
+689.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "END_PRINT Macro End print"
+},
+{
+"pg": 15,
+"bi": 10,
+"bbox": [
+95.4,
+691.9,
+475.1,
+705.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "M141 Device Control Set Chamber Temperature"
+},
+{
+"pg": 15,
+"bi": 11,
+"bbox": [
+95.4,
+708.0,
+485.6,
+722.0
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "M191 Device Control Wait for Chamber Temperature"
+},
+{
+"pg": 15,
+"bi": 12,
+"bbox": [
+95.4,
+724.1,
+478.2,
+738.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "PAUSE Macro Pause print / Interrupt print"
+},
+{
+"pg": 15,
+"bi": 13,
+"bbox": [
+95.4,
+740.2,
+438.4,
+754.2
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "PRINT_END Macro Print End"
+},
+{
+"pg": 16,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第15 页共26 页"
+},
+{
+"pg": 16,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "15 / 30"
+},
+{
+"pg": 16,
+"bi": 2,
+"bbox": [
+95.4,
+73.2,
+440.6,
+87.2
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "PRINT_START Macro Print Start"
+},
+{
+"pg": 16,
+"bi": 3,
+"bbox": [
+95.4,
+89.3,
+447.6,
+103.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "RESUME Macro Resume print"
+},
+{
+"pg": 16,
+"bi": 4,
+"bbox": [
+95.4,
+105.4,
+458.6,
+119.4
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "RIGHT_NOZZLE_PROBE Device Control Right nozzle probe"
+},
+{
+"pg": 16,
+"bi": 5,
+"bbox": [
+95.4,
+121.4,
+468.8,
+135.4
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "SET_PAUSE_AT_LAYER Macro Pause at specified layer"
+},
+{
+"pg": 16,
+"bi": 6,
+"bbox": [
+95.4,
+137.5,
+459.0,
+151.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "SET_PAUSE_NEXT_LAYER Macro Pause at next layer"
+},
+{
+"pg": 16,
+"bi": 7,
+"bbox": [
+95.4,
+153.7,
+438.8,
+167.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "START_PRINT Macro Start Pint"
+},
+{
+"pg": 16,
+"bi": 8,
+"bbox": [
+95.4,
+169.8,
+463.2,
+183.8
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "T0 Device Control Switch to Left Nozzle"
+},
+{
+"pg": 16,
+"bi": 9,
+"bbox": [
+95.4,
+185.9,
+466.1,
+199.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "T1 Device Control Switch to Right Nozzle"
+},
+{
+"pg": 16,
+"bi": 10,
+"bbox": [
+90.0,
+218.8,
+177.5,
+240.9
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Maintenance"
+},
+{
+"pg": 16,
+"bi": 11,
+"bbox": [
+90.0,
+477.5,
+401.2,
+538.8
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "USB Update: Used for updating firmware via a USB drive. Factory Reset: Restore the printer to its original factory settings. Export Logs: Export the printer's operation logs to a USB drive. Restart: If a specific component encounters an error, tap this to restart it."
+},
+{
+"pg": 17,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第16 页共26 页"
+},
+{
+"pg": 17,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "16 / 30"
+},
+{
+"pg": 17,
+"bi": 2,
+"bbox": [
+90.0,
+76.5,
+211.8,
+98.6
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Advanced Settings"
+},
+{
+"pg": 18,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第17 页共26 页"
+},
+{
+"pg": 18,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "17 / 30"
+},
+{
+"pg": 18,
+"bi": 2,
+"bbox": [
+90.0,
+76.5,
+211.8,
+98.6
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Advanced Settings"
+},
+{
+"pg": 18,
+"bi": 3,
+"bbox": [
+90.0,
+382.0,
+495.2,
+458.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "Auto Bed Leveling: When this switch is enabled, the printer will perform \"Adaptive Probing\" on the specific printing area for slicing files generated by CreatWare. For files from other slicing software, a full-bed leveling will be performed before the print starts. Auto Changer Nozzle : When printing with a single nozzle, if the filament is exhausted, the printer will automatically switch to the other nozzle to continue the print."
+},
+{
+"pg": 18,
+"bi": 4,
+"bbox": [
+111.0,
+475.6,
+135.0,
+490.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "NOTE"
+},
+{
+"pg": 18,
+"bi": 5,
+"bbox": [
+90.0,
+491.6,
+469.7,
+504.9
+],
+"sz": 9.9,
+"col": 0,
+"bold": false,
+"t": "Using this feature requires both nozzles to be loaded with the same type of filament and have"
+},
+{
+"pg": 18,
+"bi": 6,
+"bbox": [
+90.0,
+507.2,
+446.4,
+520.5
+],
+"sz": 9.9,
+"col": 0,
+"bold": false,
+"t": "identical nozzle diameters. Additionally, the offset value for Nozzle 2 must be calibrated."
+},
+{
+"pg": 18,
+"bi": 7,
+"bbox": [
+90.0,
+538.0,
+505.2,
+583.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "CAUTION Installing different filament types or using mismatched nozzle diameters may cause issues such as no extrusion, poor flow, layer shifting, or print failure after the nozzle switch."
+},
+{
+"pg": 18,
+"bi": 8,
+"bbox": [
+90.0,
+600.6,
+490.6,
+661.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "Auto Door Lock：The printer compartment door automatically locks. Door Open Protection Mode: This feature allows the printer to automatically execute a preset action (Pause Print / Stop Print) if the chamber door is detected as open during the printing process."
+},
+{
+"pg": 18,
+"bi": 9,
+"bbox": [
+90.0,
+678.4,
+477.5,
+723.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "TIPS If \"Stop Print\" is selected, opening the chamber door during printing will directly cancel the current print task."
+},
+{
+"pg": 18,
+"bi": 10,
+"bbox": [
+90.0,
+740.8,
+420.2,
+755.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "Lighting Control: Controls the internal lighting switch for the printer chamber."
+},
+{
+"pg": 19,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第18 页共26 页"
+},
+{
+"pg": 19,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "18 / 30"
+},
+{
+"pg": 19,
+"bi": 2,
+"bbox": [
+90.0,
+72.6,
+474.2,
+117.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "Power-loss Recovery: When this feature is enabled, the device saves the current printing progress at the moment of a power failure. Upon restarting, the printer will prompt you to choose whether to resume the print operation."
+},
+{
+"pg": 19,
+"bi": 3,
+"bbox": [
+90.0,
+135.0,
+494.6,
+195.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "CAUTION Before resuming a print, ensure the bottom of the model is still firmly adhered to the heatbed surface. If any warping or detachment is observed at the base, do not proceed with the print to avoid potential damage to the extruder or other components."
+},
+{
+"pg": 19,
+"bi": 4,
+"bbox": [
+90.0,
+230.0,
+242.4,
+252.1
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Wi-Fi Network Settings"
+},
+{
+"pg": 19,
+"bi": 5,
+"bbox": [
+90.0,
+472.9,
+191.3,
+534.2
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "1. Scan / Refresh. 2. Enable/Disable WiFi. 3. WiFi Configuration. 4. Remove Network."
+},
+{
+"pg": 20,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第19 页共26 页"
+},
+{
+"pg": 20,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "19 / 30"
+},
+{
+"pg": 20,
+"bi": 2,
+"bbox": [
+90.0,
+76.5,
+204.2,
+98.6
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Network Settings"
+},
+{
+"pg": 20,
+"bi": 3,
+"bbox": [
+90.0,
+335.2,
+485.1,
+364.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "DHCP Switch: When disabled, you can manually configure the IP address, gateway, and other network parameters."
+},
+{
+"pg": 20,
+"bi": 4,
+"bbox": [
+90.0,
+383.3,
+128.1,
+405.5
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Cloud"
+},
+{
+"pg": 20,
+"bi": 5,
+"bbox": [
+90.0,
+626.4,
+503.9,
+672.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "Local Network Only: Enable to restrict printer access to the local network only and block external connections. QR Code: Scan this QR code with the CreatCloud App to add the printer to your device list."
+},
+{
+"pg": 21,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第20 页共26 页"
+},
+{
+"pg": 21,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "20 / 30"
+},
+{
+"pg": 21,
+"bi": 2,
+"bbox": [
+90.0,
+76.5,
+157.3,
+98.6
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Print Page"
+},
+{
+"pg": 21,
+"bi": 3,
+"bbox": [
+90.0,
+319.6,
+244.3,
+412.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "1. Tap to stop printing immediately. 2. Pause Print. 3. Cancel Print. 4. Fine Tuning. 5. Settings . 6. unlock the printer chamber door."
+},
+{
+"pg": 21,
+"bi": 4,
+"bbox": [
+90.0,
+428.8,
+504.8,
+474.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "TIPS When tapping \"Pause\" or \"Cancel,\" the action will take effect only after the current line of G-code has finished executing."
+},
+{
+"pg": 21,
+"bi": 5,
+"bbox": [
+90.0,
+492.5,
+165.7,
+514.7
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Fine Tuning"
+},
+{
+"pg": 21,
+"bi": 6,
+"bbox": [
+90.0,
+735.6,
+497.6,
+765.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "1. Tap Z+ or Z- to control the descent or ascent of the heatbed. This is used to fine-tune the gap between the nozzle and the heatbed if it is too large or too small during the first layer printing."
+},
+{
+"pg": 22,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第21 页共26 页"
+},
+{
+"pg": 22,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "21 / 30"
+},
+{
+"pg": 22,
+"bi": 2,
+"bbox": [
+90.0,
+88.2,
+486.2,
+133.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "TIPS Refer to the photos below to observe the printing status of the first layer and check if the gap between the nozzle and the heatbed is appropriate."
+},
+{
+"pg": 22,
+"bi": 3,
+"bbox": [
+90.0,
+150.6,
+499.3,
+211.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "2. Tap Speed+ or Speed- to adjust the printing speed. You can quickly return to 100% by tapping the \"Reset\" button at the top. 3. Tap Flow+ or Flow- to fine-tune the extrusion amount. You can quickly return to 100% by tapping the \"Reset\" button at the top."
+},
+{
+"pg": 23,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第22 页共26 页"
+},
+{
+"pg": 23,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "22 / 30"
+},
+{
+"pg": 23,
+"bi": 2,
+"bbox": [
+210.0,
+73.7,
+377.5,
+101.5
+],
+"sz": 20.1,
+"col": 0,
+"bold": true,
+"t": "Machine Calibration"
+},
+{
+"pg": 23,
+"bi": 3,
+"bbox": [
+90.0,
+120.8,
+175.5,
+142.9
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Input Shaper"
+},
+{
+"pg": 23,
+"bi": 4,
+"bbox": [
+90.0,
+161.3,
+428.7,
+190.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "1：After entering the Calibration page, tap \"Input Shaper.\" 2：Tap \"Full Measurement\" and wait for the automatic calibration to complete."
+},
+{
+"pg": 23,
+"bi": 5,
+"bbox": [
+90.0,
+317.3,
+339.1,
+346.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "3：After clicking \"Accept,\" wait for the machine to restart. 4：Calibration Complete"
+},
+{
+"pg": 23,
+"bi": 6,
+"bbox": [
+90.0,
+474.3,
+249.6,
+496.4
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Probe Offset Calibration"
+},
+{
+"pg": 23,
+"bi": 7,
+"bbox": [
+90.0,
+514.9,
+479.8,
+528.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "1：Click Probe Calibration 2：Click Start to initialize calibration."
+},
+{
+"pg": 24,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第23 页共26 页"
+},
+{
+"pg": 24,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "23 / 30"
+},
+{
+"pg": 24,
+"bi": 2,
+"bbox": [
+100.4,
+72.8,
+236.0,
+86.8
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "3：Perform Z-Offset Calibration"
+},
+{
+"pg": 24,
+"bi": 3,
+"bbox": [
+90.0,
+245.6,
+188.1,
+267.7
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Offset Manage"
+},
+{
+"pg": 24,
+"bi": 4,
+"bbox": [
+90.0,
+286.1,
+473.5,
+331.0
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "1：Select the coordinates requiring calibration, then click \"Start\" 2：Observe whether the nozzle meets the standard; if it does, you may click \"Skip Check\"; otherwise, calibration is required."
+},
+{
+"pg": 24,
+"bi": 5,
+"bbox": [
+90.0,
+457.7,
+376.2,
+487.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "3：After fine-tuning the nozzle to the centered position, click Next. 4：Click Start."
+},
+{
+"pg": 24,
+"bi": 6,
+"bbox": [
+90.0,
+613.7,
+505.2,
+627.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "5：Waiting for XY coordinate calibration... 6：Waiting for Z-axis coordinate calibration..."
+},
+{
+"pg": 24,
+"bi": 7,
+"bbox": [
+312.2,
+76.5,
+329.4,
+86.9
+],
+"sz": 7.5,
+"col": 0,
+"bold": true,
+"t": "NOTE"
+},
+{
+"pg": 24,
+"bi": 8,
+"bbox": [
+298.7,
+94.6,
+511.8,
+126.6
+],
+"sz": 7.5,
+"col": 0,
+"bold": false,
+"t": "1: Click the numerical value corresponding to the movement distance to toggle the single-step movement increment. 2: Click Z+ or Z- to adjust the height of the heated bed."
+},
+{
+"pg": 24,
+"bi": 9,
+"bbox": [
+313.7,
+132.9,
+326.9,
+143.3
+],
+"sz": 7.5,
+"col": 0,
+"bold": true,
+"t": "TIPS"
+},
+{
+"pg": 24,
+"bi": 10,
+"bbox": [
+298.7,
+151.0,
+511.9,
+238.1
+],
+"sz": 7.5,
+"col": 0,
+"bold": false,
+"t": "When performing Z-offset calibration, it is recommended to adjust the distance values sequentially, moving from larger increments to smaller ones. During the Z-offset adjustment process, place a 0.1mm feeler gauge between the nozzle and the build platform. Use the Z+ and Z- buttons to adjust the height while sliding the feeler gauge back and forth. Once you feel distinct resistance when pulling the gauge, click \"Confirm\" to save the setting."
+},
+{
+"pg": 25,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第24 页共26 页"
+},
+{
+"pg": 25,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "24 / 30"
+},
+{
+"pg": 25,
+"bi": 2,
+"bbox": [
+90.0,
+72.8,
+423.9,
+86.8
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "7：Print Verification Parameter Settings 8：Calibration Complete"
+},
+{
+"pg": 25,
+"bi": 3,
+"bbox": [
+119.2,
+219.3,
+134.9,
+231.8
+],
+"sz": 9.0,
+"col": 0,
+"bold": true,
+"t": "TIPS"
+},
+{
+"pg": 25,
+"bi": 4,
+"bbox": [
+101.2,
+237.6,
+493.8,
+287.6
+],
+"sz": 7.5,
+"col": 0,
+"bold": false,
+"t": "1: If print verification is not required, please click \"Save\" directly. 2: Please set the nozzle and heated bed temperatures according to the material parameters (refer to the filament spool label or slicing software settings). 3: If you need to load or change filament, please click \"Filament Settings.\" 4: Please ensure the build platform is clean and free of debris before clicking \"Start Print.\""
+},
+{
+"pg": 26,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第25 页共26 页"
+},
+{
+"pg": 26,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "25 / 30"
+},
+{
+"pg": 26,
+"bi": 2,
+"bbox": [
+243.8,
+76.6,
+351.3,
+99.4
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Ready to print"
+},
+{
+"pg": 26,
+"bi": 3,
+"bbox": [
+90.0,
+120.8,
+228.1,
+142.9
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Software Downloads"
+},
+{
+"pg": 26,
+"bi": 4,
+"bbox": [
+90.0,
+159.9,
+296.0,
+190.6
+],
+"sz": 12.0,
+"col": 255,
+"bold": true,
+"t": "Download - CreatBot 3D Printers Click the link to download the software and app."
+},
+{
+"pg": 26,
+"bi": 5,
+"bbox": [
+90.0,
+209.1,
+283.6,
+231.2
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Slicer Software Configuration"
+},
+{
+"pg": 26,
+"bi": 6,
+"bbox": [
+90.0,
+249.7,
+331.8,
+279.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "1：Open the software. 2：Select the corresponding model and nozzle diameter."
+},
+{
+"pg": 26,
+"bi": 7,
+"bbox": [
+90.0,
+421.3,
+419.7,
+435.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "3：Select Filament 4：Configuration Complete"
+},
+{
+"pg": 27,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第26 页共26 页"
+},
+{
+"pg": 27,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "26 / 30"
+},
+{
+"pg": 27,
+"bi": 2,
+"bbox": [
+90.0,
+105.2,
+374.5,
+127.3
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Connect the printer to the slicing software."
+},
+{
+"pg": 27,
+"bi": 3,
+"bbox": [
+90.0,
+145.7,
+280.8,
+159.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "1：Go to the printer to check the IP address."
+},
+{
+"pg": 27,
+"bi": 4,
+"bbox": [
+90.0,
+254.6,
+96.4,
+268.6
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "--"
+},
+{
+"pg": 27,
+"bi": 5,
+"bbox": [
+90.0,
+301.7,
+277.8,
+315.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "2：Enter the printer's IP address, then save."
+},
+{
+"pg": 27,
+"bi": 6,
+"bbox": [
+90.0,
+474.3,
+315.8,
+496.4
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Introduction to the Slicing Process"
+},
+{
+"pg": 27,
+"bi": 7,
+"bbox": [
+90.0,
+514.9,
+503.0,
+528.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "1：Drag the model file you wish to print into the software, or click \"Add\" to select the model file."
+},
+{
+"pg": 28,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第27 页共26 页"
+},
+{
+"pg": 28,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "27 / 30"
+},
+{
+"pg": 28,
+"bi": 2,
+"bbox": [
+90.0,
+72.8,
+502.2,
+102.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "2：After adding a model, you must carefully verify whether the machine type, consumables, and process align with the actual specifications."
+},
+{
+"pg": 28,
+"bi": 3,
+"bbox": [
+90.0,
+322.4,
+502.0,
+336.4
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "3：Once you have verified that everything is correct, click the Slice button to perform the slicing."
+},
+{
+"pg": 28,
+"bi": 4,
+"bbox": [
+90.0,
+556.4,
+412.9,
+570.4
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "4：Slicing is complete. Please inspect the model for any conflicts or defects."
+},
+{
+"pg": 29,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第28 页共26 页"
+},
+{
+"pg": 29,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "28 / 30"
+},
+{
+"pg": 29,
+"bi": 2,
+"bbox": [
+90.0,
+76.5,
+242.8,
+98.6
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Print File (Send Online)"
+},
+{
+"pg": 29,
+"bi": 3,
+"bbox": [
+90.0,
+116.8,
+472.8,
+146.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "TIPS Before sending, please ensure that you have connected the printer to the slicing software."
+},
+{
+"pg": 29,
+"bi": 4,
+"bbox": [
+90.0,
+163.9,
+169.9,
+177.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "1：Click the Print ."
+},
+{
+"pg": 29,
+"bi": 5,
+"bbox": [
+90.0,
+397.9,
+490.6,
+411.9
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "2：Set the print filename and choose whether to print immediately or only send the print file."
+},
+{
+"pg": 30,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第29 页共26 页"
+},
+{
+"pg": 30,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "29 / 30"
+},
+{
+"pg": 30,
+"bi": 2,
+"bbox": [
+90.0,
+76.5,
+263.8,
+98.6
+],
+"sz": 15.9,
+"col": 0,
+"bold": true,
+"t": "Print File (Offline Printing)"
+},
+{
+"pg": 30,
+"bi": 3,
+"bbox": [
+90.0,
+117.1,
+292.5,
+131.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "1：Switch export mode to G-code export mode"
+},
+{
+"pg": 30,
+"bi": 4,
+"bbox": [
+90.0,
+366.7,
+433.6,
+380.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "2：Save the G-code file to a USB drive, then insert the USB drive into the printer."
+},
+{
+"pg": 30,
+"bi": 5,
+"bbox": [
+90.0,
+616.3,
+499.5,
+630.3
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "1：Click the File 2：If no file or device is found, please click to"
+},
+{
+"pg": 30,
+"bi": 6,
+"bbox": [
+321.0,
+631.7,
+385.2,
+645.7
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "refresh the list."
+},
+{
+"pg": 31,
+"bi": 0,
+"bbox": [
+0.2,
+0.1,
+76.9,
+12.1
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "第30 页共26 页"
+},
+{
+"pg": 31,
+"bi": 1,
+"bbox": [
+486.5,
+817.1,
+512.2,
+829.2
+],
+"sz": 9.0,
+"col": 16777215,
+"bold": false,
+"t": "30 / 30"
+},
+{
+"pg": 31,
+"bi": 2,
+"bbox": [
+90.0,
+88.4,
+383.5,
+102.4
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "3：Select File and Print 4：Confirm Print"
+},
+{
+"pg": 31,
+"bi": 3,
+"bbox": [
+90.0,
+259.8,
+505.4,
+305.1
+],
+"sz": 10.4,
+"col": 0,
+"bold": true,
+"t": "CAUTION After selecting the file to print, please do not immediately remove the USB drive. You may remove the drive once the printing of the first layer has begun."
+},
+{
+"pg": 32,
+"bi": 0,
+"bbox": [
+84.5,
+658.3,
+261.9,
+674.9
+],
+"sz": 12.0,
+"col": 0,
+"bold": true,
+"t": "Henan Creatbot Technology Limited"
+},
+{
+"pg": 32,
+"bi": 1,
+"bbox": [
+84.5,
+690.7,
+336.1,
+751.5
+],
+"sz": 10.4,
+"col": 0,
+"bold": false,
+"t": "Website: www.creatbot.com E-mail: sales@creatbot.com Address:No.150 Lamei Road,Zhongyuan District,Zhengzhou City, Henan Province, China"
+}
+]

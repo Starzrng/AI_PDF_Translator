@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283 182" font-family="PT Sans, Arial" font-size="8.5" fill="#000">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#808080"/></marker>
+  <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,1 L10,5 L0,9" fill="none" stroke="#666" stroke-width="1.4"/></marker></defs>
+  <line x1="236" y1="25" x2="62" y2="149" stroke="#808080" stroke-width="3.2" marker-end="url(#ah)"/>
+  <circle cx="240" cy="22" r="3.4" fill="#fff" stroke="#808080" stroke-width="1.2"/>
+  <circle cx="55" cy="155" r="3.4" fill="#fff" stroke="#808080" stroke-width="1.2"/>
+  <line x1="92" y1="30" x2="140" y2="74" stroke="#666" stroke-width="0.9" marker-end="url(#ah2)"/>
+  <text x="58" y="22">Позиционирование по прямой</text>
+  <text x="236" y="11" text-anchor="end">Начальная точка</text>
+  <text x="2" y="172">Конечная точка</text>
+</svg>

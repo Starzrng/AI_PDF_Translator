@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 420" font-family="PT Sans, Arial" font-weight="700">
+  <defs>
+    <marker id="t" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#1d1d1d"/></marker>
+  </defs>
+  <g fill="#8cc63f" stroke="#6ea52e" stroke-width="1">
+    <path d="M63,8 h184 l10,16 l-10,16 h-184 l-10,-16z"/>
+    <path d="M63,70 h184 l10,16 l-10,16 h-184 l-10,-16z"/>
+    <path d="M63,132 h184 l10,16 l-10,16 h-184 l-10,-16z"/>
+    <path d="M63,194 h184 l10,16 l-10,16 h-184 l-10,-16z"/>
+    <path d="M155,252 l92,44 l-92,44 l-92,-44z"/>
+    <path d="M63,370 h184 l10,16 l-10,16 h-184 l-10,-16z"/>
+  </g>
+  <g fill="#1d1d1d">
+    <path d="M143,46 h24 l-12,12z"/><path d="M143,108 h24 l-12,12z"/><path d="M143,170 h24 l-12,12z"/>
+  </g>
+  <g stroke="#1d1d1d" stroke-width="2" fill="none">
+    <line x1="155" y1="228" x2="155" y2="246" marker-end="url(#t)"/>
+    <line x1="155" y1="340" x2="155" y2="362" marker-end="url(#t)"/>
+    <polyline points="247,296 290,296 290,210 260,210" marker-end="url(#t)"/>
+  </g>
+  <g fill="#fff" font-size="12.5" text-anchor="middle">
+    <text x="155" y="28.5">Калибровка осей</text>
+    <text x="155" y="90.5">Установка эталонной сферы</text>
+    <text x="155" y="152.5">Задание параметров</text>
+    <text x="155" y="214.5">Задание точки обучения</text>
+    <text x="155" y="292">Задано не менее</text><text x="155" y="307">трёх точек?</text>
+    <text x="155" y="390.5">Результат калибровки</text>
+  </g>
+  <g fill="#1d1d1d" font-size="12">
+    <text x="163" y="358">Да</text>
+    <text x="296" y="258">Нет</text>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283 235" font-family="PT Sans, Arial" font-size="8.5" fill="#000">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#707070"/></marker>
+  <marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <circle cx="107" cy="108" r="101" fill="#d9d9d9" stroke="#8c8c8c" stroke-width="1"/>
+  <line x1="107" y1="108" x2="206" y2="108" stroke="#707070" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="107" y1="108" x2="120" y2="206" stroke="#707070" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M121,108 A14,14 0 0 1 108.9,121.9" fill="none" stroke="#707070" stroke-width="0.8"/>
+  <text x="119" y="134" font-size="9">80°</text>
+  <text x="211" y="111">Начало</text>
+  <text x="122" y="226" text-anchor="middle">Конец</text>
+  <line x1="232" y1="192" x2="200" y2="177" stroke="#555" stroke-width="1.2" marker-end="url(#b)"/>
+  <text x="196" y="204">Скорость вращения</text>
+  <text x="196" y="214">400 град/мин</text>
+</svg>

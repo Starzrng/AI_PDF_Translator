@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 70" font-family="PT Sans, Arial" font-size="10">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,1 L10,5 L0,9z" fill="#000"/></marker></defs>
+  <line x1="34" y1="46" x2="136" y2="46" stroke="#000" stroke-width="0.9" stroke-dasharray="3 2" marker-end="url(#a)"/>
+  <line x1="146" y1="46" x2="268" y2="66" stroke="#000" stroke-width="0.9" stroke-dasharray="3 2" marker-end="url(#a)"/>
+  <circle cx="30" cy="46" r="3.2"/><circle cx="142" cy="46" r="3.2"/><circle cx="272" cy="66" r="3.2"/>
+  <text x="4" y="24">Начальная точка A</text>
+  <text x="104" y="24">Промежуточная точка B</text>
+  <text x="222" y="44">Референтная точка R</text>
+</svg>

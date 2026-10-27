@@ -1,0 +1,157 @@
+/* XM-100 RU manual — mirrors the look of the Chinese Word original.
+   Page chrome (watermark, header logos, page numbers) is stamped later by build.py. */
+
+@page { size: A4; margin: 78pt 54pt 78pt 54pt; }
+
+:root {
+  --body: 10pt;
+  --lh: 1.72;
+  --gray: #a5a6a5;      /* striped tables (ch.1–3) */
+  --dgray: #7e7f7e;     /* alarm/code tables header */
+  --red: #ff0000;
+}
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: var(--body);
+  line-height: var(--lh);
+  color: #000;
+  hyphens: auto;
+}
+
+/* ---------- headings ---------- */
+h1, h2, h3, h4, h5 { font-weight: bold; margin: 0; break-after: avoid; line-height: 1.35; }
+h1 { font-size: 14pt; text-align: center; margin: 0 0 16pt; }
+h1.ch { break-before: page; }
+h2 { font-size: 12pt; margin: 16pt 0 9pt; }
+h3 { font-size: 10.5pt; margin: 14pt 0 7pt; }
+h4 { font-size: 10.5pt; margin: 12pt 0 6pt; }
+h5 { font-size: 10.5pt; margin: 12pt 0 5pt; }
+h1 + h2 { margin-top: 6pt; }
+h2 + h3, h3 + h4 { margin-top: 6pt; }
+
+/* ---------- text ---------- */
+p { margin: 0 0 4pt; text-indent: 21pt; text-align: justify; }
+p.ni, .t p, td p, li p { text-indent: 0; }
+p.warn, .warn { color: var(--red); font-weight: bold; }
+b, strong { font-weight: bold; }
+.red { color: var(--red); }
+.nowrap { white-space: nowrap; }
+code, .code { font-family: "PT Mono", "Menlo", monospace; font-size: 0.92em; }
+
+ul.dot { list-style: none; margin: 2pt 0 6pt; padding-left: 21pt; }
+ul.dot > li { position: relative; margin: 0 0 2pt; text-align: justify; }
+ul.dot > li::before { content: "●"; position: absolute; left: -13pt; font-size: 0.8em; top: 0.05em; }
+ol.num { margin: 2pt 0 6pt; padding-left: 24pt; }
+
+/* ---------- figures ---------- */
+figure { margin: 10pt 0 12pt; text-align: center; break-inside: avoid; }
+figure img { display: block; margin: 0 auto; }
+figure.scr img { width: 425pt; }
+figure.half img { width: 300pt; }
+figcaption { font-weight: bold; margin-top: 6pt; line-height: 1.3; }
+img { max-width: 100%; }
+
+/* button + description rows (ch.3) */
+.feat { display: flex; align-items: center; gap: 18pt; margin: 4pt 0 10pt; break-inside: avoid; }
+.feat > .b { flex: 0 0 136pt; display: flex; gap: 2pt; flex-wrap: wrap; }
+.feat > .b img { width: 64pt; display: block; }
+.feat > .b img.w2 { width: 130pt; }
+.feat > .b img.pic { width: 132pt; }
+.feat > .t { flex: 1; }
+.feat > .t p { text-align: justify; margin-bottom: 3pt; }
+.feat > .t ul.dot { margin: 0; }
+
+/* ---------- tables ---------- */
+table { border-collapse: collapse; width: 100%; margin: 6pt 0 12pt; line-height: 1.35; }
+td, th { vertical-align: middle; }
+
+/* striped gray table like 2.1 / 2.2 */
+table.ta { box-shadow: 1.5pt 1.5pt 2.5pt rgba(0,0,0,.25); }
+table.ta th { background: var(--gray); font-weight: bold; padding: 7pt 8pt; text-align: center; }
+table.ta td { padding: 6pt 8pt; }
+table.ta td:first-child { text-align: center; }
+table.ta tr:nth-child(odd):not(:first-child) td { background: var(--gray); }
+table.ta th + th, table.ta td + td { border-left: 1.2pt solid #fff; }
+table.ta.left td:first-child { text-align: left; }
+
+/* thin grid tables (alarms, G-code tables) */
+table.tb { border: 0.8pt solid #000; }
+table.tb th { background: var(--dgray); color: #000; font-weight: bold; padding: 2.5pt 5pt; border: 0.6pt solid #000; text-align: center; }
+table.tb td { padding: 2.5pt 5pt; border: 0.6pt solid #000; }
+table.tb tr.acode td { font-weight: bold; }
+table.tb td.c { text-align: center; }
+table.tb .en { display: block; font-weight: bold; }
+table.tb .ru { display: block; font-weight: normal; color: #222; }
+table.tb tr.acode .ru { font-weight: normal; color: #000; }
+table.tb thead { display: table-header-group; }
+table.tb tr { break-inside: avoid; }
+tbody.alarm { break-inside: avoid; }
+
+/* G-code “Формат / Пояснение” blocks */
+.lbl { font-weight: bold; margin: 10pt 0 2pt; }
+.fmt { border-top: 1pt solid #000; border-bottom: 1pt solid #000; padding: 6pt 0 6pt 36pt; margin: 4pt 0 8pt; }
+.fmt p { text-indent: 0; }
+.fmt + .lbl { margin-top: 4pt; }
+
+/* ---------- table of contents ---------- */
+.toc h1 { margin-bottom: 10pt; font-size: 10.5pt; }
+.toc a { color: #000; text-decoration: none; display: flex; align-items: baseline; }
+.toc .e { line-height: 1.6; margin: 0 0 1.8pt; }
+.toc .l1 { padding-left: 21pt; font-weight: bold; }
+.toc .l2 { padding-left: 52pt; font-weight: bold; }
+.toc .l3 { padding-left: 84pt; }
+.toc .l4 { padding-left: 116pt; }
+.toc .dots { flex: 1; margin: 0 4pt; border-bottom: 1.2pt dotted #000; transform: translateY(-3pt); min-width: 12pt; }
+.toc .pg { font-variant-numeric: tabular-nums; min-width: 16pt; text-align: right; }
+
+/* ---------- misc ---------- */
+.pb { break-before: page; }
+.keep { break-inside: avoid; }
+.center { text-align: center; text-indent: 0; }
+.gap { height: 10pt; }
+
+/* formulas & G-code tables */
+.formula { margin: 4pt 0 8pt 42pt; }
+.formula p { text-indent: 0; margin: 3pt 0; }
+math { font-size: 1.15em; font-family: "STIX Two Math", "Cambria Math", serif; }
+table.gtab th { background: var(--gray); }
+table.gtab td { padding: 3pt 6pt; }
+
+.hmi-fig { display: block; margin: 0 auto; overflow: hidden; break-inside: avoid; }
+.lft .hmi-fig { margin: 0; }
+
+/* front matter */
+.toc { break-before: page; }
+.callout { display: flex; margin: 10pt 0 14pt; break-inside: auto; }
+.callout .ci { flex: 0 0 112pt; text-align: center; padding-top: 22pt; }
+.callout .ci img { width: 58pt; display: block; margin: 0 auto 8pt; }
+.callout .ci b { font-size: 10.5pt; }
+.callout .cb { flex: 1; border-left: 1.4pt solid #4a4a4a; margin: 0; padding: 4pt 0 4pt 30pt; }
+.callout .cb li { margin-bottom: 6pt; }
+.sticker { position: relative; width: 182pt; margin: 0 auto; }
+.sticker img { width: 182pt; display: block; }
+.sticker .st-text { position: absolute; left: 22.6pt; top: 39pt; width: 45.5pt; height: 62.5pt; background: #fdd736;
+  font-family: "PT Sans Narrow", "PT Sans"; font-size: 3.55pt; line-height: 1.17; text-align: left; color: #111; overflow: hidden; }
+
+/* spec sheet (1.1.1) */
+table.spec { border: 0.8pt solid #000; font-size: 9.5pt; }
+table.spec th, table.spec td { border: 0.6pt solid #000; padding: 5pt 5pt; text-align: left; vertical-align: middle; }
+table.spec th { font-weight: bold; background: none; }
+/* name/description tables (ch.1) */
+table.tc th { background: #7e7f7e; font-weight: bold; padding: 5pt 6pt; text-align: center; border: 1pt solid #fff; }
+table.tc td { padding: 4.5pt 6pt; border: 1pt solid #fff; }
+table.tc tr:nth-child(odd):not(:first-child) td { background: #bebfbe; }
+table.tc td.c { text-align: center; }
+table.spec, table.tc, table.ta { break-inside: avoid; }
+table.tc tr, table.ta tr, table.spec tr { break-inside: avoid; }
+
+/* program listings (ch.4) */
+.prog { margin: 2pt 0 8pt 42pt; font-family: "PT Mono", "Menlo", monospace; font-size: 8.8pt; line-height: 1.55; }
+.prog div { white-space: pre-wrap; }
+.prog i { font-style: normal; font-family: "PT Sans", sans-serif; font-size: 9.6pt; color: #333; }
+.ind { padding-left: 21pt; }
+.ind2 { padding-left: 42pt; }
+.lbl { break-after: avoid; }

@@ -1,0 +1,156 @@
+
+===== PAGE 3 =====
+When a laser engraver engraves or cuts materials, it casts high-density laser beam that heats the surface to vaporize materials without burning them.
+But most materials are inherently flammable and can be ignited, which may burn the device and the surroundings.
+Warning:
+1. Do not place the device near flammable and explosive materials, volatile solvents or heat sources. Please place the device in a ventilated, cool and
+dust-free environment;
+2. Please use the adapter and power cord provided with the device;
+3. Regularly clean the body and laser module with an anti-static brush or a dry cloth when the device is powered off;
+01 SECURITY STATEMENT
+
+===== PAGE 4 =====
+4. Please connect the silicone tube on the laser module no matter using an air assist or not. Otherwise, there will be a risk of lens contamination;
+5. The working temperature of the power adapter is 5°C-35°C. Avoid using this product in a humid environment, and do not use it in thunderstorm
+weather;
+6. If the device isn’t used for a long time, please turn off the device and disconnect the power cord;
+7. When the device is connected to the power supply, please do not touch the electronic areas with your hands or other tools. It is forbidden to plug
+and unplug the laser module cable when the device is powered on;
+8. When the device is running, please do not touch any part of the moving system and laser module;
+9. When working, do not look directly at the laser and wear goggles to protect your eyes;
+10. Smoke or smell may be produced during laser engraving and cutting. It is recommended to operate in a well-ventilated environment;
+11. Children please operate under adult supervision;
+12. Have a fire extinguisher ready just in case. Regularly maintain and inspect fire extinguishers;
+13. It is forbidden to leave it unattended while the device is working;
+14. Users should abide by the laws and regulations of the corresponding country and region where the equipment is located (where it is used),
+practice professional ethics and pay attention to safety obligations. It is strictly forbidden to use our products or equipment for any illegal purposes. If
+there is any violation, we will not be responsible for the relevant legal responsibilities;
+15. Please clean the tray promptly and do not accumulate debris.
+Use of controls or adjustments or performance of procedures other than those specified herein may result in hazardous
+radiation exposure. The laser safety classification of this product follows IEC 60825-1:2014. The laser safety level of laser
+radiation emitted through laser aperture exceeds level 1.
+02 PACKING LIST
+
+===== PAGE 21 =====
+1.Didn’t Light Up: The device is in a power-off state, or some abnormality occurs.
+2.Solid white: The device is in the initialization mode, and it will automatically enter the standby mode after the initialization is completed.
+3.Flashing Red Light: The red light flashes twice, indicating that the sealing state is broken and the preview mode fails to be entered; When the red
+light keeps flashing, the device is in abnormal mode and the buzzer makes a rapid sound. It will automatically enter standby mode after the
+abnormality is cleared. For example, in the working state, the equipment rolls over, the confined space is destroyed, the laser module is abnormal,
+etc.
+4.Green Gradient Light: The device is in standby mode, and you can press Frame button to enter preview mode.
+5.Solid blue: The device is in preview mode or engraving mode, and the laser module is emitting a beam. Special attention should be paid to safety.
+6.Flashing Yellow light: Couldn’t read G-Code file in the TF card, and the buzzer will sound twice.
+7.Flashing Purple Light: The device is in the firmware upgrade mode, and the buzzer makes a rapid sound at the same time. It will automatically enter
+the standby mode after the upgrade is completed.
+Warning Light
+05 SPECIFICATIONS
+
+===== PAGE 23 =====
+Power: Indicates powered on.
+Laser: Shows that the laser emits a normal beam.
+Silicone Tube Port: Connect air pump to pass air flow.
+
+===== PAGE 24 =====
+Type-C: Connect TF card to upgrade firmware, equipped with TF card reader and A to C adapter.
+Reset: Use it to clear the alarm information after alarming; another situation is for the 60W or 40W power laser module, doing a long press to switch
+three modes - 60W,40W,22W.
+Precise: If only this light is on, it means that the current mode is precise, the maximum light power is 22W, the engraving effect is more delicate, and
+the cutting gap is smaller.
+Normal: The two lights are on, which means it is in Normal. The maximum optical power is 40W, which can cut thicker materials and the cutting speed
+is faster.
+Powerful: Three lights are on, which means it is in Powerful. The maximum optical power is 60W, which means it can cut thicker materials and the
+cutting speed is faster.
+
+===== PAGE 25 =====
+1. The alarm function of the laser module is turned on by default and can be turned off manually. When the alarm function is turned off, the indicator
+light will still indicate the current situation normally. Please refer to the "Laser Module Alarm Functions" in the TF card.
+2. When alarming, press Reset on the laser module to stop the alarm, but you need to pay attention to the current working status of the laser module.
+For more information about this function, please refer to the "GRBL Configuration Parameters" in the TF card.
+Notes:
+
+===== PAGE 28 =====
+1. Why does the carved work fail to achieve the expected effect compared with the original image? (Like the engraving effect is relatively light and the
+lines are crooked)
+A. There are recommended parameters for engraving and cutting on the official website or TF card.
+B. At the same time, please check whether the device screws are tightened and whether the belt is appropriately tight to eliminate hardware
+problems.
+Note:
+1) When the laser module is under the action of gravity, it can slide slowly on the X-axis profile perpendicular to the desktop;
+2) When there is no idle slip on any pulley in the laser head assembly;
+3) The belt tightness is appropriate. Otherwise, please adjust the belt tightness manually.
+2. Is it possible to engrave on reflective/transparent materials such as ceramics/glass?
+Yes, but before engraving, you need to apply anti-reflective material on the surface of the material to ensure the engraving effect and prevent reflected
+light from damaging the laser module.
+3. What should I do if the software does not respond or cannot connect when engraving online?
+A. Make sure the data cable has communication function and the end of the data cable connected to the computer is a USB-A interface. If the
+computer does not have a USB-A interface, there is an A to C adapter to convert it, or use a hub with a USB-A port.
+B. Make sure you have successfully imported the Creality Falcon2.lbdev file according to the LightBurn software tutorial in the TF card.
+C. Make sure that the COM port corresponding to the engraving device is not occupied.
+D. If it still can't be connect, please record a short video of the connection operation, and feed back the relevant system information and software
+version number to the after-sales team to troubleshoot the problem more quickly.
+09 TROUBLESHOOTING
+
+===== PAGE 29 =====
+The angle data is abnormal and it has stopped working.
+Please check whether the workbench is shaking, the screws are locked tightly and the frame of the machine is firm.
+There is no G-Code file in the root directory of the TF card.
+Please check whether the suffix of the file in the TF card is ".gcode/.gc/.nc ", and ensure the file is saved in the root directory.
+No airflow is detected and the machine has stopped working.
+Please check whether the air pump is connected to the machine, check whether the knob switch on the left side of the machine is adjusted to the
+maximum, and check whether the silicone air tube above the laser module is inserted and there is no kinks in the tube.
+In the Falcon Machine Settings you can change: $153 to 0 to cancel the alarm function (it is recommended to set it according to the actual situation).
+A flame has been detected and the machine has stopped working.
+Please press the Reset button if the material is not burning, and the FIRE light will turn orange, indicating that there is a risk of fire. You can press the
+start button to continue working and after restarting the machine, the FIRE light will be green. Refer to “Laser Module Alarm Functions.pdf” for more
+information.
+In the Falcon Machine Settings you can change: $154 to 0 to cancel the alarm function (it is recommended to set it according to the actual situation).
+ERROR:01
+ERROR:02
+ERROR:04
+ERROR:05
+
+===== PAGE 30 =====
+Lens contamination is detected and the machine has stopped working.
+Please press the Reset button and the LENS light will turn orange. You can press the start button to continue working and the lens needs to be
+cleaned when powered off. The LENS will still keep red light flashing when power on. You need to press the reset button again to confirm that the lens
+is clean and the LENS light will be green. Refer to “Laser Module Alarm Functions.pdf” for more information.
+In the Falcon Machine Settings you can change: $155 to 0 to cancel the alarm function (it is recommended to set it according to the actual situation).
+The temperature of the laser module is high and it has stopped working.
+You can press the Reset button and then press the Start button to continue the current work.
+It is recommended to clean the laser module when powered off and wait for the laser module to cool down to a suitable temperature before working.
+In the Falcon Machine Settings you can change: $158 to 0 to cancel the alarm function (it is recommended to enable the alarm function).
+The air pressure sensor of the laser module is not performing correctly.
+It is recommended to restart the machine to see if it is solved. If the error persists, please contact the after-sales service for relevant technical support.
+The flame sensor of the laser module is not performing correctly.
+ERROR:06
+ERROR:07
+ERROR:08
+ERROR:09
+
+===== PAGE 31 =====
+It is recommended to restart the machine to see if it is solved. If the error persists, please contact the after-sales service for relevant technical support.
+The lens sensor of the laser module is not performing correctly.
+It is recommended to restart the machine to see if it is solved. If the error persists, please contact the after-sales service for relevant technical support.
+The laser module does not have an LD temperature sensor.
+It is recommended to restart the machine to see if it is solved. If the error persists, please contact the after-sales service for relevant technical support.
+Laser module LD sensor short circuit.
+It is recommended to restart the machine to see if it is solved. If the error persists, please contact the after-sales service for relevant technical support.
+The CPU temperature of the laser module is too high.
+It is recommended to clean the laser module after power off and wait for the laser module to cool to the appropriate temperature before working.
+The temperature of host CPU is too high.
+ERROR:10
+ERROR:11
+ERROR:12
+ERROR:13
+ERROR:14
+
+===== PAGE 32 =====
+Please check whether the ambient temperature is too high. It is recommended to wait for the host to cool down to a suitable temperature before
+working.
+The machine is in an unsealed state.
+Please close the protective cover and drawer, and then press the start button of the device to continue working.
+The air pump is not performing normally.
+Please contact the after-sales service for relevant technical support.
+ERROR:24
+ERROR:25

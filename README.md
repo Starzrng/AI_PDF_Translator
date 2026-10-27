@@ -1,64 +1,27 @@
 # PDF Translator
 
-Набор воспроизводимых инструментов для перевода технических PDF с участием ИИ-агента. Агент отвечает за смысловой перевод и терминологию; скрипты извлекают текст, собирают документ и проверяют PDF. Это надёжнее, чем безнадзорный «автопереводчик» для документов с предупреждениями, скриншотами, таблицами и командами.
+Перевод технических PDF на русский с сохранением вёрстки. Переводит ИИ-агент (термины, безопасность, единицы — под контролем человека), а код извлекает текст, собирает PDF и проверяет его. Правила для агентов — [`AGENTS.md`](AGENTS.md), список работ и команды сборки — [`jobs/README.md`](jobs/README.md).
 
-## Готовый перевод D400 HS
+## Установка
 
-Итоговый документ: [`output/pdf/D400_HS_User_Manual_ru_inplace.pdf`](output/pdf/D400_HS_User_Manual_ru_inplace.pdf).
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -e .
+```
 
-Это 31-страничный русский мануал в исходной композиции: иллюстрации, схемы, нумерация, декоративные элементы и скриншоты сохранены, а внешний английский текст заменён русским внутри его исходных зон. Подписи, уже «запечённые» в растровых скриншотах интерфейса, оставлены как названия элементов UI, чтобы не ухудшать читаемость изображений.
+Шрифт перевода — Arial из macOS; на другой системе задайте `PDFT_FONT_REGULAR` и `PDFT_FONT_BOLD`. XM-100 собирается системным `python3` с Playwright (`pip install playwright && playwright install chromium`).
 
-`output/pdf/D400_HS_User_Manual_ru_paired.pdf` сохранён как проверочная пара «оригинал + полный русский текст» для сверки терминологии, а не как финальный формат выдачи.
+## Инструменты ядра
 
-Исходный текст перевода находится в [`translations/d400-hs-ru.json`](translations/d400-hs-ru.json).
+```bash
+.venv/bin/python -m pdft.blocks jobs/<id>/source.pdf          # инвентарь текстовых блоков → blocks.json / blocks.txt
+.venv/bin/python -m pdft.render jobs/<id>/out/<file>.pdf 3-7  # PNG страниц в tmp/render/
+.venv/bin/python -m pdft.diff old.pdf new.pdf                 # попиксельная регрессия, exit 1 при разнице
+```
 
-## Универсальный агентский конвейер
+## Устройство
 
-[`scripts/pdf_translation_service.py`](scripts/pdf_translation_service.py) - общий инструмент для PDF с извлекаемым текстом.
-
-1. Создайте и заполните локальное окружение:
-
-   ```bash
-   python3 -m venv .venv
-   .venv/bin/python -m pip install "pypdf>=6.0" "pymupdf>=1.28" "reportlab>=4.0"
-   ```
-
-2. Извлеките манифест. ИИ-агент переводит поля `translation_title` и `translation_body`, оставляя команды, единицы, URL, марки моделей и предупреждения точными:
-
-   ```bash
-   .venv/bin/python scripts/pdf_translation_service.py extract input/manual.pdf translations/manual-ru.json --language ru
-   ```
-
-3. Соберите финальный PDF в исходной вёрстке:
-
-   ```bash
-   .venv/bin/python scripts/pdf_translation_service.py build-inplace-flow input/manual.pdf translations/manual-ru.json output/pdf/manual-ru.pdf
-   ```
-
-   Для вычитки смысла при сложной или неоднозначной вёрстке дополнительно можно собрать парный PDF:
-
-   ```bash
-   .venv/bin/python scripts/pdf_translation_service.py build input/manual.pdf translations/manual-ru.json output/pdf/manual-ru-paired.pdf
-   ```
-
-4. Проверьте число страниц и наличие извлекаемого русского текста:
-
-   ```bash
-   .venv/bin/python scripts/pdf_translation_service.py validate-inplace input/manual.pdf output/pdf/manual-ru.pdf
-   ```
-
-Перед выдачей результата обязательно визуально отрендерьте итоговый PDF. Рабочие PNG размещайте в `tmp/pdfs/`, финальные документы - в `output/pdf/`.
-
-### Почему выбран именно этот режим
-
-`build-inplace-flow` использует реальные границы извлекаемых текстовых блоков PDF. Он сохраняет страницу и её изображение, закрывает только текстовые зоны и заполняет их переводом. Отдельные легенды сложных схем можно уточнить в `DIRECT_REPLACEMENTS` скрипта; D400 HS уже содержит такие правила для страниц с компонентами экструдера.
-
-Парные страницы остаются универсальным режимом вычитки: он не меняет оригинальные листы и помогает сверить безопасность, терминологию и объём перевода до выпуска финального PDF.
-
-OCR и более тяжёлые библиотеки здесь не добавлены в основной конвейер: у D400 HS и большинства цифровых руководств текст уже извлекается корректно. Они нужны лишь для сканов или повреждённых PDF, где исходный текст нельзя получить штатно.
-
-## Исторические сборщики
-
-- `scripts/eagle_manual_ru_pdf.py` создаёт отдельный 24-страничный русский документ Eagle без оригинальных иллюстраций.
-- `scripts/build_raystudio_ru_pdf.py` создаёт 40-страничный вариант RayStudio: оригинальная страница, затем её русский перевод.
-- `scripts/build_raystudio_ru_inplace.py` накладывает русский текст на 19 оригинальных страниц RayStudio 1.7 по вручную заданным панелям.
+- `pdft/` — общее ядро (оверлей, блоки, рендер, сравнение, шрифты).
+- `jobs/<id>/` — одна работа на мануал: `build.py`, переводы, `source.pdf`, `out/`.
+- `articles/` — переводы веб-статей.
+- `docs/` — правила перевода, техника, глоссарии, [`HANDOFF.md`](docs/HANDOFF.md) (история и план).

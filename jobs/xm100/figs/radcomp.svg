@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-62 0 407 135" font-family="PT Sans, Arial">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,1 L10,5 L0,9z" fill="#000"/></marker></defs>
+  <text x="2" y="16" font-size="12.5">Коррекция на радиус инструмента G40/41/42</text>
+  <path d="M128,40 H296 A42,42 0 0 1 296,124 H294 V102 A20,20 0 0 0 294,62 H128z" fill="#d9d9d9"/>
+  <path d="M128,63 H294 A20,20 0 0 1 294,102" fill="none" stroke="#000" stroke-width="2.2" stroke-dasharray="6 3"/>
+  <path d="M128,66 H293 A17,17 0 0 1 293,99" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="127" y1="62" x2="102" y2="56" stroke="#000" stroke-width="0.8" stroke-dasharray="2 2" marker-end="url(#a)"/>
+  <line x1="127" y1="67" x2="102" y2="76" stroke="#000" stroke-width="0.8" stroke-dasharray="2 2" marker-end="url(#a)"/>
+  <text x="98" y="58" font-size="9" text-anchor="end">Запрограммированный контур</text>
+  <text x="98" y="80" font-size="9" text-anchor="end">Траектория центра инструмента</text>
+</svg>

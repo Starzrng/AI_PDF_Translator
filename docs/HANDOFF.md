@@ -1,0 +1,70 @@
+# Передача контекста
+
+Журнал крупных изменений проекта. Новая запись — сверху.
+
+## 2026-10-27 — консолидация двух папок в один репозиторий
+
+### Что было
+
+Две папки с одной задачей и разным кодом:
+
+- `/Users/starz/Documents/Finance-analyzer/PDF Translater` — без git, лежала внутри постороннего проекта (Finance-analyzer — финансовый дашборд). Сильные сборщики под каждый мануал (D1000 Pro HS, Sermoon P1, Falcon2 Pro, XM-100) и статьи Gaussian Splats, но общий код копировался между работами (`engine.py` → `scanner/engine_scan.py` с правками), а ~80 МБ занимали черновые рендеры. Правила перевода и глоссарии хранились только в памяти Claude этой папки — другой агент их не видел.
+- `/Users/starz/Documents/pdf_translator` — git и GitHub, `CLAUDE.md` и `.hermes.md` (одинаковые копии), «универсальный» CLI `scripts/pdf_translation_service.py`. На деле CLI жёстко прописан под D400 (страницы 3–8, 15, 21–31), а его режим `build-inplace-flow` даёт слабый результат: текст перетекает между несвязанными блоками, рвёт предложения, заголовки теряют оформление. Плюс сборщики RayStudio и Eagle.
+
+### Что стало
+
+Один репозиторий `/Users/starz/Documents/pdf_translator`; устройство — `AGENTS.md` («Карта»). Взято лучшее из обеих папок: структура, git и форма правил — из `pdf_translator`, движки и переводы — из `PDF Translater`.
+
+| Было | Стало |
+|---|---|
+| `PDF Translater/engine.py`, `translations.py`, `blocks.json`, `source.pdf`, `D1000 pro HS-user manual-RU.pdf` | `jobs/d1000-pro-hs/build.py`, `translations.py`, `blocks.json`, `source.pdf`, `out/…` |
+| `PDF Translater/scanner/engine_scan.py`, `translations_scan.py`, … | `jobs/sermoon-p1/build.py`, `translations.py`, … |
+| `PDF Translater/scanner/dump_blocks.py` | `pdft/blocks.py` (`python -m pdft.blocks`) |
+| общие функции, скопированные в `engine.py` и `engine_scan.py` | `pdft/overlay.py` (`Overlay`), `pdft/fonts.py` |
+| `PDF Translater/falcon2/build_falcon.py`, `imgtr.py`, картинки | `jobs/falcon2-pro/build.py`, `imgtr.py`, `content_imgs/`, `imgs_ru/` |
+| `PDF Translater/xm100/` | `jobs/xm100/` (внутренняя структура не менялась) |
+| `PDF Translater/gaussian-splats-part1`, `-part2` | `articles/gaussian-splats-part1`, `-part2` |
+| `scripts/pdf_translation_service.py`, `translations/d400-hs-ru.json`, `output/pdf/D400_*` | `jobs/d400-hs/build.py`, `translation.json`, `out/` |
+| `~/Downloads/D400 HS User Manual.pdf` | копия в `jobs/d400-hs/source.pdf` (оригинал в Downloads не тронут) |
+| `scripts/build_raystudio_ru_inplace.py`, `build_raystudio_ru_pdf.py`, `input/`/`output/` RayStudio | `jobs/raystudio-1.7/build_inplace.py`, `build_paired.py`, `source.pdf`, `out/` |
+| `scripts/eagle_manual_ru_pdf.py`, `input/Eagle…`, `output/Eagle…` | `jobs/eagle-1.6/build.py`, `source.pdf`, `out/` |
+| `CLAUDE.md` и `.hermes.md` — две копии | `AGENTS.md` — единственный источник; `CLAUDE.md` = `@AGENTS.md`, `.hermes.md` — симлинк на `AGENTS.md` |
+| правила из памяти Claude | `docs/translation-conventions.md`, `docs/overlay-technique.md`, `docs/web-articles.md`, `docs/glossary/gaussian-splats.md`, раздел «Решения пользователя» в `jobs/xm100/NOTES.md` |
+
+Пути в скриптах теперь считаются от `Path(__file__)` (кроме `jobs/xm100/covers.py`), результаты пишутся в `out/` работы. Добавлены `pdft.render` и `pdft.diff`; `.venv` получил `pip install -e .`, версия PyMuPDF зафиксирована (1.28.2).
+
+### Проверка
+
+Каждая работа пересобрана на новом месте и сравнена с прежним PDF попиксельно (`pdft.diff`, 50–72 dpi): D1000, Sermoon, Falcon2, XM-100 (155 с., 128 закладок), D400 in-place, RayStudio (оба варианта), Eagle — `0.000%`. `imgtr.py` даёт байт-в-байт ту же картинку.
+
+Исключение — D400 paired: 0,18 % на нескольких страницах. Прежний PDF собран 20 августа в 10:53, а `translation.json` правился в 12:13, то есть PDF устарел ещё до переезда; это не регрессия.
+
+### Удалено (в корзине macOS: `~/.Trash/pdf-translator-cleanup-2026-10-27/`)
+
+- Черновые рендеры и промежуточные файлы: `out/`, `falcon2/pv`, `falcon2/rv`, `scanner/pv`, `scanner/rv`, `xm100/build`, `xm100/hmi/out`, `pdf_translator/tmp` (94 МБ).
+- Falcon первой версии (по решению пользователя «не актуально»): `falcon/`, `falcon_pdf/cand_A.pdf`, `falcon.html`, `falcon2/Falcon2Pro_RU_draft.pdf`.
+- Производные выгрузки: `blocks.txt`, `full_text.txt` (D1000 и сканер), `__pycache__`, `.DS_Store`.
+- Опустевшие `input/`, `output/`, `scripts/`, `translations/` и вся папка `Finance-analyzer/PDF Translater` с её `.claude/settings.local.json` (разовые разрешения команд, не переносились). `Finance-analyzer` остальное не тронуто.
+
+### Находки
+
+- **Версия PyMuPDF меняет разбиение на блоки.** Системный `python3` (miniconda, PyMuPDF 1.27.2) и `.venv` (1.28.2) дают разное число блоков (Sermoon: 193 и 201; D1000: 265 и 263). Существующие `blocks.json` сделаны на 1.27; сборка на 1.28.2 с ними даёт идентичный результат. Отсюда правило «blocks.json работы не пересоздавать» в `AGENTS.md`.
+- **D400** собран слабым режимом (см. выше), а в `translation.json` стоит «филамент» вместо «пластик». Кандидат на переделку оверлеем.
+- **RayStudio** — оба PDF по ~100 МБ, вероятно, из-за полностью встроенных шрифтов. Пользователь отложил: «пока оставляем как есть».
+- **Playwright в `.venv`** не установился (таймаут PyPI) — XM-100 собирается системным `python3`.
+- Память Claude старой папки (`~/.claude/projects/-Users-starz-Documents-Finance-analyzer-PDF-Translater/memory/`) больше не нужна: её содержимое перенесено в `docs/`.
+
+### Дальше — фаза 2: харнесс
+
+Цель — чтобы агент без контекста вёл работу от исходника до сданного PDF по одному контракту. Сначала обсудить дизайн с пользователем:
+
+1. Единый контракт работы: файл-описание (режим, исходник, язык, имя результата) и общие команды вроде `python -m pdft build <job>` / `check <job>` вместо разных `build.py` с разными аргументами.
+2. Встроенные проверки: число страниц, нет ли непереведённого исходного текста, нет ли переполнения блоков, рендер-лист для просмотра.
+3. Глоссарий как данные (не только markdown), чтобы проверять перевод на запрещённые варианты («филамент», «останов»).
+4. Одно окружение: Playwright в `.venv`, XM-100 на нём.
+5. Переделать D400 оверлеем, взяв текст из `translation.json`.
+6. По желанию: сжать RayStudio.
+
+### Как продолжить
+
+Открыть новый проект Claude Code в `/Users/starz/Documents/pdf_translator`: `CLAUDE.md` подключает `AGENTS.md` автоматически. Дальше — `jobs/README.md` (статусы) и этот файл (раздел «Дальше»).
