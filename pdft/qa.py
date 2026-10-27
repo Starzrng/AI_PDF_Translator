@@ -5,6 +5,8 @@ ERROR  leftover   source-font text with letters still on the page (not in KEEP)
 ERROR  moved      source text that is not where the source has it (redaction damage)
 ERROR  lost       source text outside every entry box vanished (redaction too wide)
 ERROR  style      translation breaks docs/glossary/style-rules.json
+ERROR  glyph      character the translation font cannot draw (shows as an empty box)
+ERROR  truncated  the page shows less of a translation than its html has (MuPDF drops overflow silently)
 WARN   shrunk     text scaled below 90 % to fit (layout too tight)
 WARN   fill-art   a painted box covers original artwork (paint=True entries)
 WARN   text-art   new text lands on original artwork (lines, icons, photos)
@@ -20,7 +22,8 @@ from pathlib import Path
 
 import pymupdf
 
-from .overlay import block_bbox, parse_key
+from .fonts import font_path
+from .overlay import block_bbox, parse_key, plain, squash
 from .segments import has_letters, segment
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -89,6 +92,7 @@ def check(job, log, pages=None):
     keep = set(getattr(mod, "KEEP", ()))
     pages = set(pages or range(1, pymupdf.open(job.source).page_count + 1))
     rules = json.loads((ROOT / "docs/glossary/style-rules.json").read_text(encoding="utf-8"))
+    font = pymupdf.Font(fontfile=font_path("regular"))
     issues = []
 
     def add(level, kind, pg, key, msg):
@@ -102,9 +106,12 @@ def check(job, log, pages=None):
             if k not in keep:
                 add("ERROR", "todo", pg, k, "not translated yet")
             continue
-        plain = re.sub(r"<[^>]+>", "", e["html"])
+        visible = plain(e["html"])
+        missing = sorted({c for c in visible if not c.isspace() and not font.has_glyph(ord(c))})
+        if missing:
+            add("ERROR", "glyph", pg, k, "not in the font: " + " ".join(f"{c} U+{ord(c):04X}" for c in missing))
         for rule in rules:
-            if re.search(rule["pattern"], plain, re.I):
+            if re.search(rule["pattern"], visible, re.I):
                 add("ERROR", "style", pg, k, f'«{rule["pattern"]}» → {rule["use"]}')
 
     src, out = pymupdf.open(job.source), pymupdf.open(job.output)
@@ -138,6 +145,14 @@ def check(job, log, pages=None):
         for s in src_spans:
             if _sig(s) not in out_sigs and not any(_center(s["bbox"]) in b for b in boxes):
                 add("ERROR", "lost", pg, "?", f'source text removed outside any entry box: "{s["text"].strip()[:40]}"')
+
+        tr_by_key = {k: e for k, e in mod.TR.items()}
+        for en in page_log:
+            e = tr_by_key.get(en["key"])
+            if e and e.get("html"):
+                shown = squash(out[pno].get_text("text", clip=pymupdf.Rect(en["rect"]) + (-1, -1, 1, 1)))
+                if squash(plain(e["html"])) not in shown:
+                    add("ERROR", "truncated", pg, en["key"], "part of the translation is not on the page")
 
         # layout
         for en in page_log:

@@ -40,6 +40,19 @@ class Job:
         return load_translations(self.dir)
 
 
+def _source_lh(job, keys, size):
+    """Line height the source uses for this segment (pitch / size), if it has 2+ lines."""
+    pitches = [job.blocks[parse_key(k)]["lp"] for k in keys if "lp" in job.blocks[parse_key(k)]]
+    for a, b in zip(keys, keys[1:]):           # step between merged blocks, per line of the first
+        step = (block_bbox(job.blocks, b)[1] - block_bbox(job.blocks, a)[1]) / job.blocks[parse_key(a)].get("nl", 1)
+        if step > 0.5 * size:
+            pitches.append(step)
+    if not pitches:
+        return None
+    lh = sorted(pitches)[len(pitches) // 2] / size
+    return round(lh, 2) if 1.0 <= lh <= 3.0 else None
+
+
 def _entries(job, mod, pages):
     oc = job.cfg.get("overlay", {})
     out = []
@@ -52,7 +65,8 @@ def _entries(job, mod, pages):
         for m in keys[1:]:
             base |= pymupdf.Rect(block_bbox(job.blocks, m))
         o = job.blocks[(pg, bi)]
-        size, lh = e.get("size", o["sz"]), e.get("lh", oc.get("lh", 1.25))
+        size = e.get("size", o["sz"])
+        lh = e.get("lh") or _source_lh(job, keys, size) or oc.get("lh", 1.25)
         r = pymupdf.Rect(base)
         need = size * lh * 1.15 + 0.4           # htmlbox needs ~15 % over the line height
         if r.height < need:                     # one-line box: room for one line at full size
@@ -65,13 +79,19 @@ def _entries(job, mod, pages):
         pad = e.get("bgpad", oc.get("bg_pad", 0.8))
         html = e["html"]
         units = [job.blocks[parse_key(x)] for x in keys]
+        align = e.get("align")
+        if align is None and len(keys) > 1:     # lines centred on each other -> centred text
+            bbs = [block_bbox(job.blocks, x) for x in keys]
+            if max(b[0] for b in bbs) - min(b[0] for b in bbs) > 2 and \
+                    max(b[0] + b[2] for b in bbs) - min(b[0] + b[2] for b in bbs) <= 5:
+                align = "center"
         if e.get("bold", all(u["bold"] and "<b>" not in u.get("h", "") for u in units)) and not html.startswith("<b>"):
             html = f"<b>{html}</b>"           # weight follows the source block
         out.append(dict(
             key=k, keys=keys, pno=pg - 1, rect=r,
             fill=pymupdf.Rect(e["fr"]) if "fr" in e else base + (-pad, -pad, pad, pad),
             fillcolor=e.get("fillcolor"), paint=e.get("paint", oc.get("paint", False)), html=html, size=size,
-            color=e.get("color", hexcol(o["col"])), align=e.get("align"),
+            color=e.get("color", hexcol(o["col"])), align=align,
             lh=lh, grow=e.get("grow", oc.get("grow", True))))
     for i, op in enumerate(getattr(mod, "OPS", [])):
         if pages and op["pg"] not in pages:
@@ -109,12 +129,12 @@ def _solve(ov, en, page_h):
     a one-line label whose right end touches a leader line -> right; else left. Growth follows
     the anchor: right-aligned labels grow left, centred ones to both sides and
     then up and down (wrapping to two lines), left ones right then down;
-    paragraphs grow down. Only clean background is
+    paragraphs grow down, then sideways (centred ones sideways first). Only clean background is
     taken. -> (rect, align, scale, note)
     """
     pno, probe = en["pno"], en["fill"] or en["rect"]
     one_line = en["rect"].height < 2.2 * en["size"]
-    free = lambda d: ov.free_space(pno, probe, d) - 1.0
+    free = lambda d, area=probe: ov.free_space(pno, area, d) - 1.0
     align = en["align"]
     if align is None:
         page_cx = ov.doc[pno].rect.width / 2
@@ -134,20 +154,25 @@ def _solve(ov, en, page_h):
     scale = measure(r)
     if scale >= FIT or not en["grow"]:
         return r, align, scale, None
-    if not one_line:
-        order = ("down",)
+    if not one_line:                           # paragraphs: down first, then sideways
+        order = {"right": ("down", "left"), "center": ("sides", "down")}.get(align, ("down", "right"))
     else:
         order = {"right": ("left",), "center": ("sides", "vsides")}.get(align, ("right", "down"))
     note = None
     for direction in order:
-        room = {"sides": lambda: min(free("left"), free("right")),
-                "vsides": lambda: min(free("up"), free("down"))}.get(direction, lambda: free(direction))()
+        area = probe | r                       # after one growth, scan beside the grown box
+        room = {"sides": lambda: min(free("left", area), free("right", area)),
+                "vsides": lambda: min(free("up", area), free("down", area))}.get(direction, lambda: free(direction, area))()
         if direction == "down":
             room = min(room, page_h - FOOTER - r.y1)
-        elif direction in ("right", "sides"):
-            room = min(room, en["column"][1] - r.x1)
+        # paragraphs stay inside the text column; one-line labels may use half the margin
+        lo_x, hi_x = en["column"]
+        if one_line:
+            lo_x, hi_x = lo_x / 2, hi_x + (ov.doc[pno].rect.width - hi_x) / 2
+        if direction in ("right", "sides"):
+            room = min(room, hi_x - r.x1)
         if direction in ("left", "sides"):
-            room = min(room, r.x0 - en["column"][0])
+            room = min(room, r.x0 - lo_x)
         if room <= 0.5:
             continue
         if measure(_grown(r, direction, room)) < FIT:

@@ -5,7 +5,10 @@ block with the sampled background colour and writes the translation on top,
 so artwork, tables and page furniture stay untouched. See
 docs/overlay-technique.md for the gotchas these helpers encode.
 """
+import html as htmlmod
 import json
+import re
+import unicodedata
 from collections import Counter
 
 import pymupdf
@@ -26,6 +29,21 @@ def hexcol(i):
 def hex2rgb(h):
     h = h.lstrip("#")
     return (int(h[0:2], 16) / 255, int(h[2:4], 16) / 255, int(h[4:6], 16) / 255)
+
+
+def plain(html):
+    """Visible text of a translation's html."""
+    return htmlmod.unescape(re.sub(r"<br\s*/?>", " ", re.sub(r"<(?!br)[^>]+>", "", html)))
+
+
+def squash(text):
+    """Text without any whitespace: compares content regardless of line breaks.
+
+    MuPDF extracts a drawn "-" as a soft hyphen (U+00AD) and ";" as U+037E;
+    NFKC and the hyphen map undo that.
+    """
+    text = unicodedata.normalize("NFKC", text.replace("\xad", "-"))
+    return re.sub(r"\s+", "", text)
 
 
 def parse_key(key):
@@ -112,13 +130,18 @@ class Overlay:
                                             archive=self.arch, css=CSS)
 
     def measure(self, rect, inner, size, color="#000000", align="left", lh=1.30):
-        """(spare_height, scale) that put_html would give, without touching the document."""
+        """(spare_height, scale) that put_html would give, without touching the document.
+
+        insert_htmlbox can drop the tail of a text that does not fit and still
+        report scale 1.0; such a box is reported here as scale 0.
+        """
         if not hasattr(self, "_scratch"):
             self._scratch = pymupdf.open()
         page = self._scratch.new_page(width=self.doc[0].rect.width, height=self.doc[0].rect.height)
-        res = page.insert_htmlbox(rect, self._html(inner, size, color, align, lh), archive=self.arch, css=CSS)
+        spare, scale = page.insert_htmlbox(rect, self._html(inner, size, color, align, lh), archive=self.arch, css=CSS)
+        complete = squash(page.get_text()) == squash(plain(inner))
         self._scratch.delete_page(0)
-        return res
+        return (spare, scale if complete else 0.0)
 
     def free_space(self, pno, rect, direction="down", tol=30):
         """Points of clean background next to rect on the untouched source render.

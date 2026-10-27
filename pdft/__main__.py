@@ -1,7 +1,8 @@
 """Harness CLI for overlay jobs. Run from the repo root:
 
   python -m pdft inspect jobs/<id>            what is in the source: text, fonts, images, TM hits
-  python -m pdft init    jobs/<id>            blocks.json + translations.py skeleton (TODOs, TM prefill)
+  python -m pdft init    jobs/<id>            blocks.json + translations.py skeleton (TODOs, TM prefill);
+                                              re-run keeps every translated entry
   python -m pdft build   jobs/<id> [--pages]  build out/ PDF, then QA (exit 1 on QA errors)
   python -m pdft review  jobs/<id> [--pages]  source | translation PNG pairs in tmp/<id>/
 
@@ -21,7 +22,7 @@ from . import qa
 from .job import Job, build
 from .render import parse_pages
 from .segments import segment
-from .tm import Memory
+from .tm import Memory, load_translations
 
 ROOT = Path(__file__).resolve().parents[1]
 REDRAW_DPI = 200      # raster below this effective resolution is a redraw candidate
@@ -60,6 +61,12 @@ def _lit(s):
     return repr(s)
 
 
+def _t(key, entry):
+    """t(...) line for an existing entry, html last so options stay readable."""
+    opts = "".join(f", {k}={v!r}" for k, v in entry.items() if k != "html")
+    return f"t({key!r}{opts}, html={_lit(entry['html'])})"
+
+
 def cmd_init(job_dir):
     src = job_dir / "source.pdf"
     if not (job_dir / "blocks.json").exists():
@@ -73,6 +80,9 @@ def cmd_init(job_dir):
         (job_dir / "job.json").write_text(json.dumps(cfg, indent=1) + "\n", encoding="utf-8")
     segs = segment(json.loads((job_dir / "blocks.json").read_text()))
     mem = Memory(exclude={job_dir.name})
+    target = job_dir / "translations.py"
+    old = load_translations(job_dir) if target.exists() else None   # re-init keeps work done
+    done = {k: e for k, e in (old.TR.items() if old else ()) if e.get("html") is not None}
     lines = [
         '# -*- coding: utf-8 -*-',
         f'"""RU translations for {job_dir.name} (skeleton from `python -m pdft init`).',
@@ -91,7 +101,7 @@ def cmd_init(job_dir):
         'def keep(*keys): KEEP.update(keys)',
     ]
     page = None
-    stats = [0, 0, 0]
+    stats = [0, 0, 0, 0]   # TM exact, TM hint, TODO, kept
     for s in segs:
         if s["pg"] != page:
             page = s["pg"]
@@ -101,7 +111,10 @@ def cmd_init(job_dir):
         lines.append(f'# EN: {s["h"]}')
         hit = mem.lookup(s["text"])
         merge = f', merge={s["merge"]!r}' if s["merge"] else ""
-        if hit and hit[0] == 1.0:
+        if s["key"] in done:
+            lines.append(_t(s["key"], done.pop(s["key"])))
+            stats[3] += 1
+        elif hit and hit[0] == 1.0:
             html = hit[2] if s["bold"] else re.sub(r"^<b>(.*)</b>$", r"\1", hit[2])  # weight follows this source
             lines.append(f't({s["key"]!r}{merge}, html={_lit(html)})  # TM exact: {hit[3]}')
             stats[0] += 1
@@ -112,13 +125,25 @@ def cmd_init(job_dir):
                 stats[1] += 1
             lines.append(f't({s["key"]!r}{merge}, html=TODO)')
             stats[2] += 1
-    target = job_dir / "translations.py"
-    if target.exists():
-        target = job_dir / "translations.skeleton.py"
-        print("translations.py exists — skeleton written next to it")
+    if done:                                   # translated keys the new segmentation dropped
+        lines += ["", "# ==================== KEPT FROM PREVIOUS translations.py ====================",
+                  "# These keys are no longer segment heads (merged into another segment?). Check them."]
+        lines += [_t(k, e) for k, e in done.items()]
+    if old and (old.OPS or old.KEEP):
+        lines += ["", "# ==================== OPS / KEEP ===================="]
+        lines += [f'op({o["pg"]!r}, {tuple(o["rect"])!r}, {o["html"]!r}'
+                  + "".join(f", {k}={v!r}" for k, v in o.items() if k not in ("pg", "rect", "html")) + ")"
+                  for o in old.OPS]
+        lines += [f"keep({k!r})" for k in sorted(old.KEEP)]
+    if old:
+        backup = ROOT / "tmp" / job_dir.name / "translations.py.bak"
+        backup.parent.mkdir(parents=True, exist_ok=True)
+        backup.write_text(target.read_text(encoding="utf-8"), encoding="utf-8")
+        print(f"previous translations.py saved to {backup.relative_to(ROOT)}")
     target.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"{target.relative_to(ROOT)}: {len(segs)} segments, {stats[0]} prefilled from TM, "
-          f"{stats[1]} with TM hints, {stats[2]} TODO")
+    print(f"{target.relative_to(ROOT)}: {len(segs)} segments, {stats[3]} kept from previous file, "
+          f"{stats[0]} prefilled from TM, {stats[1]} with TM hints, {stats[2]} TODO"
+          + (f"; {len(done)} translated keys no longer segment heads (listed at the end)" if done else ""))
 
 
 def cmd_build(job_dir, pages):

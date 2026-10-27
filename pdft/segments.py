@@ -21,10 +21,11 @@ def key(o):
 def _continues(seg_last, seg_x0, o):
     if o["pg"] != seg_last["pg"] or o["sz"] != seg_last["sz"] or o["col"] != seg_last["col"]:
         return False
-    if abs(o["bbox"][0] - seg_x0) > 2.0:
+    centred = abs((o["bbox"][0] + o["bbox"][2]) - (seg_last["bbox"][0] + seg_last["bbox"][2])) <= 5.0
+    if abs(o["bbox"][0] - seg_x0) > 2.0 and not centred:   # same left edge, or centred lines
         return False
     gap = o["bbox"][1] - seg_last["bbox"][3]
-    return -0.5 <= gap <= 0.6 * o["sz"]
+    return -0.25 * o["sz"] <= gap <= 0.6 * o["sz"]   # line boxes may overlap slightly
 
 
 def _units(blocks):
