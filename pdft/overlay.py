@@ -29,8 +29,19 @@ def hex2rgb(h):
 
 
 def parse_key(key):
-    """'P12b3' -> (12, 3): 1-based page, block index from blocks.json."""
-    return int(key[1:key.index("b")]), int(key[key.index("b") + 1:])
+    """'P12b3' -> (12, 3): 1-based page, block index from blocks.json.
+
+    A part suffix ('P3b10.2', see blocks.parts) is ignored here; use block_bbox.
+    """
+    return int(key[1:key.index("b")]), int(key[key.index("b") + 1:].split(".")[0])
+
+
+def block_bbox(blocks, key):
+    """bbox of a block key, or of one of its parts ('P3b10.2')."""
+    o = blocks[parse_key(key)]
+    if "." in key:
+        return o["parts"][int(key.split(".")[1]) - 1]["bbox"]
+    return o["bbox"]
 
 
 def load_blocks(path):
@@ -87,11 +98,66 @@ class Overlay:
             color = self.bg_color(pno, rect)
         self.doc[pno].draw_rect(rect, color=None, fill=color)
 
-    def put_html(self, pno, rect, inner, size, color="#000000", align="left", lh=1.30):
-        """Rich text (<b>, <br>, justify) in the embedded Arial via insert_htmlbox."""
-        html = (f'<div style="font-size:{size}px;color:{color};text-align:{align};'
+    @staticmethod
+    def _html(inner, size, color, align, lh):
+        return (f'<div style="font-size:{size}px;color:{color};text-align:{align};'
                 f'line-height:{lh};font-family:ar;">{inner}</div>')
-        self.doc[pno].insert_htmlbox(rect, html, archive=self.arch, css=CSS)
+
+    def put_html(self, pno, rect, inner, size, color="#000000", align="left", lh=1.30):
+        """Rich text (<b>, <br>, justify) in the embedded Arial via insert_htmlbox.
+
+        Returns (spare_height, scale); scale < 1 means the text was shrunk to fit.
+        """
+        return self.doc[pno].insert_htmlbox(rect, self._html(inner, size, color, align, lh),
+                                            archive=self.arch, css=CSS)
+
+    def measure(self, rect, inner, size, color="#000000", align="left", lh=1.30):
+        """(spare_height, scale) that put_html would give, without touching the document."""
+        if not hasattr(self, "_scratch"):
+            self._scratch = pymupdf.open()
+        page = self._scratch.new_page(width=self.doc[0].rect.width, height=self.doc[0].rect.height)
+        res = page.insert_htmlbox(rect, self._html(inner, size, color, align, lh), archive=self.arch, css=CSS)
+        self._scratch.delete_page(0)
+        return res
+
+    def free_space(self, pno, rect, direction="down", tol=30):
+        """Points of clean background next to rect on the untouched source render.
+
+        Scans rows below (or columns right/left of) rect until a pixel differs from the
+        background colour: other text, lines, images, page furniture.
+        """
+        pix, z = self.pixmap(pno), self.zoom
+        bg = [round(c * 255) for c in self.bg_color(pno, rect)]
+        s, n, st = pix.samples, pix.n, pix.stride
+
+        def clean(x, y):
+            o = y * st + x * n
+            return abs(s[o] - bg[0]) + abs(s[o + 1] - bg[1]) + abs(s[o + 2] - bg[2]) <= tol
+
+        x0, y0 = max(0, int(rect.x0 * z)), max(0, int(rect.y0 * z))
+        x1, y1 = min(pix.width - 1, int(rect.x1 * z)), min(pix.height - 1, int(rect.y1 * z))
+        if direction in ("left", "right"):     # sideways: only the text band, so a bar
+            band = (y1 - y0) // 4              # just taller than the text still counts
+            y0, y1 = y0 + band, y1 - band
+        if direction == "up":
+            y = y0 - 1
+            while y >= 0 and all(clean(x, y) for x in range(x0, x1 + 1, 2)):
+                y -= 1
+            return (y0 - 1 - y) / z
+        if direction == "down":
+            y = y1 + 1
+            while y < pix.height and all(clean(x, y) for x in range(x0, x1 + 1, 2)):
+                y += 1
+            return (y - y1 - 1) / z
+        if direction == "left":
+            x = x0 - 1
+            while x >= 0 and all(clean(x, y) for y in range(y0, y1 + 1, 2)):
+                x -= 1
+            return (x0 - 1 - x) / z
+        x = x1 + 1
+        while x < pix.width and all(clean(x, y) for y in range(y0, y1 + 1, 2)):
+            x += 1
+        return (x - x1 - 1) / z
 
     def fit_size(self, text, maxw, start, mins=5.0, step=0.25):
         """Largest font size <= start at which text fits maxw on one line."""

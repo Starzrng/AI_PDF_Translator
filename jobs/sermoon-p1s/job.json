@@ -1,0 +1,13 @@
+{
+ "source": "source.pdf",
+ "output": "out/sermoon-p1s_RU.pdf",
+ "mode": "overlay",
+ "source_lang": "en",
+ "target_lang": "ru",
+ "overlay": {
+  "sample_step": 1,
+  "bg_pad": 0.8,
+  "lh": 1.25,
+  "grow": true
+ }
+}

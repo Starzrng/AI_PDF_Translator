@@ -13,6 +13,17 @@ python3 -m venv .venv
 
 ## Инструменты ядра
 
+Харнесс для оверлей-работ (подробно — [`docs/harness.md`](docs/harness.md)):
+
+```bash
+.venv/bin/python -m pdft inspect jobs/<id>            # что внутри исходника
+.venv/bin/python -m pdft init jobs/<id>               # каркас translations.py: абзацы, TODO, память переводов
+.venv/bin/python -m pdft build jobs/<id> --pages 2-5  # сборка + автопроверки → out/qa.json
+.venv/bin/python -m pdft review jobs/<id> --pages 2-5 # пары «оригинал | перевод» в tmp/<id>/
+```
+
+Отдельные утилиты:
+
 ```bash
 .venv/bin/python -m pdft.blocks jobs/<id>/source.pdf          # инвентарь текстовых блоков → blocks.json / blocks.txt
 .venv/bin/python -m pdft.render jobs/<id>/out/<file>.pdf 3-7  # PNG страниц в tmp/render/
