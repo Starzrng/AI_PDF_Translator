@@ -40,6 +40,12 @@ class Job:
         return load_translations(self.dir)
 
 
+def _unit(blocks, key):
+    """Block or block part ('P3b10.2') record for a key."""
+    o = blocks[parse_key(key)]
+    return o["parts"][int(key.split(".")[1]) - 1] if "." in key else o
+
+
 def _source_lh(job, keys, size):
     """Line height the source uses for this segment (pitch / size), if it has 2+ lines."""
     pitches = [job.blocks[parse_key(k)]["lp"] for k in keys if "lp" in job.blocks[parse_key(k)]]
@@ -68,8 +74,12 @@ def _entries(job, mod, pages):
         size = e.get("size", o["sz"])
         lh = e.get("lh") or _source_lh(job, keys, size) or oc.get("lh", 1.25)
         r = pymupdf.Rect(base)
+        lines = sum(_unit(job.blocks, x).get("nl", 1) for x in keys)
         need = size * lh * 1.15 + 0.4           # htmlbox needs ~15 % over the line height
-        if r.height < need:                     # one-line box: room for one line at full size
+        if lines == 1 and "bl" in o:            # one source line: sit on the source baseline
+            r.y0 = o["bl"] - ((lh - 1.117) / 2 + 0.905) * size - 0.2   # Arial ascent 0.905, descent 0.212
+            r.y1 = r.y0 + need
+        elif r.height < need:                   # one-line box: room for one line at full size
             d = (need - r.height) / 2
             r.y0 -= d; r.y1 += d
         r.x0 += e.get("dx0", 0); r.y0 += e.get("dy0", 0); r.x1 += e.get("dx1", 0); r.y1 += e.get("dy1", 0)
@@ -89,6 +99,7 @@ def _entries(job, mod, pages):
             html = f"<b>{html}</b>"           # weight follows the source block
         out.append(dict(
             key=k, keys=keys, pno=pg - 1, rect=r,
+            one_line=lines == 1 or r.height < 2.2 * size,
             fill=pymupdf.Rect(e["fr"]) if "fr" in e else base + (-pad, -pad, pad, pad),
             fillcolor=e.get("fillcolor"), paint=e.get("paint", oc.get("paint", False)), html=html, size=size,
             color=e.get("color", hexcol(o["col"])), align=align,
@@ -100,6 +111,7 @@ def _entries(job, mod, pages):
         delta = (1.4, 1.2, -1.4, -1.2) if op.get("inset") else (-0.6, -0.6, 0.6, 0.6)
         out.append(dict(
             key=f'OP{i}@P{op["pg"]}', keys=[], pno=op["pg"] - 1, rect=r,
+            one_line=r.height < 2.2 * op.get("size", 6.0),
             fill=(r + delta) if op.get("fill", True) else None, fillcolor=op.get("fillcolor"),
             paint=op.get("paint", oc.get("paint", False)),
             html=op["html"], size=op.get("size", 6.0), color=op.get("color", "#231f20"),
@@ -133,7 +145,7 @@ def _solve(ov, en, page_h):
     taken. -> (rect, align, scale, note)
     """
     pno, probe = en["pno"], en["fill"] or en["rect"]
-    one_line = en["rect"].height < 2.2 * en["size"]
+    one_line = en["one_line"]
     free = lambda d, area=probe: ov.free_space(pno, area, d) - 1.0
     align = en["align"]
     if align is None:

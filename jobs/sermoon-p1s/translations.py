@@ -157,7 +157,7 @@ t('P5b8', html='3D-сканер Creality Sermoon P1S имеет встроенн
 t('P5b9', html='<b>Шаг 1: Подготовка к включению</b>')
 # P5b10 +1  sz6.0  (43.1, 201.0, 336.6, 218.0)
 # EN: Make sure the scanner has sufÏcient power . Press and hold the power button <span style="color:#00aeef">for 3 seconds to turn on</span> the device, and it will enter the main interface.
-t('P5b10', merge=['P5b11'], html='Убедитесь, что сканер достаточно заряжен.<br>Нажмите и удерживайте кнопку питания <span style="color:#00aeef"><b>3 секунды, чтобы включить</b></span> устройство, — откроется главный экран.')
+t('P5b10', merge=['P5b11'], html='Убедитесь, что сканер достаточно заряжен.<br>Нажмите и удерживайте кнопку питания <span style="color:#00aeef">3 секунды, чтобы включить</span> устройство, — откроется главный экран.')
 # P5b12  sz6.0  (43.1, 228.0, 119.3, 236.0)
 # EN: Complete First-Time Setup
 t('P5b12', html='Завершите первоначальную настройку')
@@ -257,7 +257,7 @@ t('P13b2', html='Примечание: для режима подключени�
 t('P13b3', html='2.2.1 Подготовка ПО')
 # P13b4  sz6.0  (41.7, 84.9, 513.3, 92.8)
 # EN: ● Download the Software: Visit the Creality ofÏcial Wiki software download page: <span style="color:#00aeef">https://wiki.creality.com/en/software</span> , find the CrealityScan software and download it.
-t('P13b4', html='● Загрузка ПО: перейдите на страницу загрузки ПО на официальной Wiki Creality: <span style="color:#00aeef"><b>https://wiki.creality.com/en/software</b></span>, найдите ПО CrealityScan и загрузите его.')
+t('P13b4', html='● Загрузка ПО: перейдите на страницу загрузки ПО на официальной Wiki Creality: <span style="color:#00aeef">https://wiki.creality.com/en/software</span>, найдите ПО CrealityScan и загрузите его.')
 # P13b5  sz6.0  (103.5, 252.3, 490.1, 260.2)
 # EN: Note: CrealityScan software has specific operating system requirements; please refer to section 5.1 "System Requirements" for details.
 t('P13b5', html='Примечание: у ПО CrealityScan есть требования к операционной системе; подробнее — раздел 5.1 «Системные требования».')

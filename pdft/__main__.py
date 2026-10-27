@@ -21,7 +21,7 @@ from . import blocks as blocks_mod
 from . import qa
 from .job import Job, build
 from .render import parse_pages
-from .segments import segment
+from .segments import match_emphasis, segment
 from .tm import Memory, load_translations
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -115,7 +115,7 @@ def cmd_init(job_dir):
             lines.append(_t(s["key"], done.pop(s["key"])))
             stats[3] += 1
         elif hit and hit[0] == 1.0:
-            html = hit[2] if s["bold"] else re.sub(r"^<b>(.*)</b>$", r"\1", hit[2])  # weight follows this source
+            html = match_emphasis(hit[2], s)    # bold/colour follow this source, not the donor
             lines.append(f't({s["key"]!r}{merge}, html={_lit(html)})  # TM exact: {hit[3]}')
             stats[0] += 1
         else:

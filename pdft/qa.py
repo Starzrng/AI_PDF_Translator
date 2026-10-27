@@ -6,11 +6,12 @@ ERROR  moved      source text that is not where the source has it (redaction dam
 ERROR  lost       source text outside every entry box vanished (redaction too wide)
 ERROR  style      translation breaks docs/glossary/style-rules.json
 ERROR  glyph      character the translation font cannot draw (shows as an empty box)
+WARN   emphasis   bold or colour in the translation where the source segment has none
 ERROR  truncated  the page shows less of a translation than its html has (MuPDF drops overflow silently)
 WARN   shrunk     text scaled below 90 % to fit (layout too tight)
 WARN   fill-art   a painted box covers original artwork (paint=True entries)
 WARN   text-art   new text lands on original artwork (lines, icons, photos)
-WARN   overlap    texts of two different entries intersect
+WARN   overlap    texts of two different entries intersect (where their source boxes did not)
 
 Artwork checks compare against the source rendered with all text removed, so
 they see exactly the lines, fills and images a translation could collide with.
@@ -24,7 +25,7 @@ import pymupdf
 
 from .fonts import font_path
 from .overlay import block_bbox, parse_key, plain, squash
-from .segments import has_letters, segment
+from .segments import has_letters, match_emphasis, segment
 
 ROOT = Path(__file__).resolve().parents[1]
 ZOOM = 3.0
@@ -98,10 +99,13 @@ def check(job, log, pages=None):
     def add(level, kind, pg, key, msg):
         issues.append(dict(level=level, kind=kind, pg=pg, key=key, msg=msg))
 
+    seg_by_key = {g["key"]: g for g in segment(list(job.blocks.values()))}
     for k, e in mod.TR.items():
         pg = parse_key(k)[0]
         if pg not in pages:
             continue
+        if e.get("html") and k in seg_by_key and match_emphasis(e["html"], seg_by_key[k]) != e["html"]:
+            add("WARN", "emphasis", pg, k, "bold/colour not in the source segment (match_emphasis would drop it)")
         if e.get("html") is None:
             if k not in keep:
                 add("ERROR", "todo", pg, k, "not translated yet")
@@ -124,6 +128,11 @@ def check(job, log, pages=None):
         src_spans = list(_spans(src[pno]))
         out_spans = list(_spans(out[pno]))
         src_sigs = {_sig(s) for s in src_spans}
+
+        def remnant(s):                        # rest of a partly redacted source span, in place
+            r = pymupdf.Rect(s["bbox"]) + (-1, -1, 1, 1)
+            return any(s["text"].strip() in t["text"] and pymupdf.Rect(t["bbox"]).intersects(r)
+                       and abs(t["bbox"][1] - s["bbox"][1]) < 1 for t in src_spans)
         out_sigs = {_sig(s) for s in out_spans if not _ours(s)}
 
         # text bookkeeping: leftover / moved / lost
@@ -131,7 +140,7 @@ def check(job, log, pages=None):
         for s in out_spans:
             if _ours(s):
                 continue
-            if _sig(s) not in src_sigs:
+            if _sig(s) not in src_sigs and not remnant(s):
                 add("ERROR", "moved", pg, "?", f'source text displaced to {tuple(round(v) for v in s["bbox"])}: "{s["text"].strip()[:40]}"')
                 continue
             c = _center(s["bbox"])
@@ -181,8 +190,11 @@ def check(job, log, pages=None):
                     add("WARN", "text-art", pg, k, f"text over artwork ({n} px) at {tuple(round(v) for v in r)}")
                     break
         keys = list(owner)
+        src_box = {en["key"]: pymupdf.Rect(en["fill"]) for en in page_log if en["fill"]}
         for i, a in enumerate(keys):
             for b in keys[i + 1:]:
+                if a in src_box and b in src_box and src_box[a].intersects(src_box[b]):
+                    continue                   # the source boxes overlap too: inherited, not new
                 if any((ra & rb).get_area() > 2 for ra in owner[a] for rb in owner[b] if ra.intersects(rb)):
                     add("WARN", "overlap", pg, f"{a} × {b}", "texts intersect")
     return issues

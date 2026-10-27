@@ -28,6 +28,7 @@ python3 -m venv .venv
 .venv/bin/python -m pdft.blocks jobs/<id>/source.pdf          # инвентарь текстовых блоков → blocks.json / blocks.txt
 .venv/bin/python -m pdft.render jobs/<id>/out/<file>.pdf 3-7  # PNG страниц в tmp/render/
 .venv/bin/python -m pdft.diff old.pdf new.pdf                 # попиксельная регрессия, exit 1 при разнице
+.venv/bin/python -m pdft.audit source.pdf translated.pdf      # метрики качества любого перевода (сравнение подходов)
 ```
 
 ## Устройство

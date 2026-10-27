@@ -22,31 +22,57 @@ def norm(s):
 
 def load_translations(job_dir):
     path = Path(job_dir) / "translations.py"
-    spec = importlib.util.spec_from_file_location(f"tr_{Path(job_dir).name.replace('-', '_')}", path)
+    spec = importlib.util.spec_from_file_location(f"tr_{abs(hash(str(path)))}", path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
 
 
+def _text(blocks, key):
+    """Source text of a block key or of a part key ('P3b10.2'); None if unknown."""
+    m = re.fullmatch(r"P(\d+)b(\d+)(?:\.(\d+))?", key)
+    o = blocks.get((int(m[1]), int(m[2]))) if m else None
+    if o is None:
+        return None
+    if m[3]:
+        parts = o.get("parts", [])
+        return parts[int(m[3]) - 1]["t"] if int(m[3]) <= len(parts) else None
+    return o["t"]
+
+
+def _sources(exclude):
+    """(name, dir) of every job with translations, incl. a job's legacy/ build.
+
+    A job's own legacy/ counts even when the job is excluded: re-doing a job
+    with the harness starts from its old translations. Later entries win on
+    identical source text, so a sibling's newer translation beats legacy.
+    """
+    for job in sorted(p for p in (ROOT / "jobs").iterdir() if p.is_dir()):
+        if job.name not in exclude:
+            yield job.name, job
+        if (job / "legacy").is_dir():
+            yield f"{job.name}/legacy", job / "legacy"
+
+
 class Memory:
     def __init__(self, exclude=()):
         self.pairs = []                       # (norm source, source, html, origin)
-        for job in sorted((ROOT / "jobs").iterdir()):
-            if job.name in exclude or not (job / "translations.py").exists() or not (job / "blocks.json").exists():
+        for name, job in _sources(exclude):
+            if not (job / "translations.py").exists() or not (job / "blocks.json").exists():
                 continue
-            blocks = {(o["pg"], o["bi"]): o["t"] for o in json.loads((job / "blocks.json").read_text())}
+            blocks = {(o["pg"], o["bi"]): o for o in json.loads((job / "blocks.json").read_text())}
             try:
                 tr = load_translations(job).TR
             except Exception as ex:          # a broken job must not block the others
-                print(f"tm: skip {job.name}: {ex}")
+                print(f"tm: skip {name}: {ex}")
                 continue
             for k, e in tr.items():
-                m = re.fullmatch(r"P(\d+)b(\d+)", k)
                 html = e.get("html")
-                if not m or not html or (int(m[1]), int(m[2])) not in blocks:
+                texts = [_text(blocks, x) for x in [k] + list(e.get("merge", []))]
+                if not html or None in texts:
                     continue
-                src = blocks[(int(m[1]), int(m[2]))]
-                self.pairs.append((norm(src), src, html, f"{job.name} {k}"))
+                src = " ".join(texts)          # whole segment, not just its first line
+                self.pairs.append((norm(src), src, html, f"{name} {k}"))
         self.exact = {p[0]: p for p in self.pairs}
 
     def lookup(self, text, min_ratio=0.75):

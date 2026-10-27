@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 """Layout-preserving EN->RU translation of Creality Sermoon P1 scanner manual.
 
-Run from anywhere: .venv/bin/python jobs/sermoon-p1/build.py
+Legacy (pre-harness) build, kept to reproduce legacy/out/ and as translation
+memory. The current job is jobs/sermoon-p1 (python -m pdft build).
+Run from anywhere: .venv/bin/python jobs/sermoon-p1/legacy/build.py
 """
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE.parents[1]))
+sys.path.insert(0, str(HERE.parents[2]))
 
 import pymupdf  # noqa: E402
 from pdft.overlay import Overlay, hex2rgb, hexcol, load_blocks, parse_key  # noqa: E402
@@ -15,7 +17,7 @@ from translations import TR, OPS  # noqa: E402
 
 OUT = HERE / "out" / "sermoon_p1_scanner_RU.pdf"
 
-ov = Overlay(HERE / "source.pdf", sample_step=1, bg_pad=0.8)
+ov = Overlay(HERE.parent / "source.pdf", sample_step=1, bg_pad=0.8)
 doc = ov.doc
 blocks = load_blocks(HERE / "blocks.json")
 fill_rect = ov.fill_rect

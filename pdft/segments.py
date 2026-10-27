@@ -72,3 +72,14 @@ def segment(blocks):
             })
     segs.sort(key=lambda s: (s["pg"], s["bbox"][1], s["bbox"][0]))
     return segs
+
+
+def match_emphasis(html, seg):
+    """Drop bold / colour runs from a reused translation when this segment's
+    source has none: emphasis follows the source being translated."""
+    import re
+    if not seg["bold"] and "<b>" not in seg["h"]:
+        html = re.sub(r"</?b>", "", html)
+    if "color:" not in seg["h"]:
+        html = re.sub(r'<span style="color:[^"]*">(.*?)</span>', r"\1", html)
+    return html
