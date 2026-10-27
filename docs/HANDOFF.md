@@ -100,4 +100,4 @@
 
 ### Как продолжить
 
-Открыть новый проект Claude Code в `/Users/starz/Documents/pdf_translator`: `CLAUDE.md` подключает `AGENTS.md` автоматически. Дальше — `jobs/README.md` (статусы) и этот файл (раздел «Дальше»).
+Открыть новый проект Claude Code в `/Users/starz/Documents/pdf_translator`: `CLAUDE.md` подключает `AGENTS.md` автоматически. Дальше — `NOTES.md` нужной работы (статус) и этот файл (раздел «Дальше»).
