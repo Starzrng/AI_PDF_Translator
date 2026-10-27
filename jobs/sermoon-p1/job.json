@@ -9,5 +9,8 @@
   "bg_pad": 0.8,
   "lh": 1.25,
   "grow": true
- }
+ },
+ "rules": [
+  "docs/glossary/creality-scanners.rules.json"
+ ]
 }

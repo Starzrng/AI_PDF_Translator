@@ -4,7 +4,7 @@ ERROR  todo       segment on a checked page still has html=TODO
 ERROR  leftover   source-font text with letters still on the page (not in KEEP)
 ERROR  moved      source text that is not where the source has it (redaction damage)
 ERROR  lost       source text outside every entry box vanished (redaction too wide)
-ERROR  style      translation breaks docs/glossary/style-rules.json
+ERROR  style      translation breaks docs/glossary/style-rules.json or a rules file listed in job.json
 ERROR  glyph      character the translation font cannot draw (shows as an empty box)
 WARN   emphasis   bold or colour in the translation where the source segment has none
 ERROR  truncated  the page shows less of a translation than its html has (MuPDF drops overflow silently)
@@ -93,6 +93,8 @@ def check(job, log, pages=None):
     keep = set(getattr(mod, "KEEP", ()))
     pages = set(pages or range(1, pymupdf.open(job.source).page_count + 1))
     rules = json.loads((ROOT / "docs/glossary/style-rules.json").read_text(encoding="utf-8"))
+    for extra in job.cfg.get("rules", []):     # glossary rules of this job's product family
+        rules += json.loads((ROOT / extra).read_text(encoding="utf-8"))
     font = pymupdf.Font(fontfile=font_path("regular"))
     issues = []
 

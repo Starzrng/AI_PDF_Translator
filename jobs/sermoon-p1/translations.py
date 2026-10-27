@@ -53,13 +53,13 @@ t('P3b0', html='1. ОБЗОР УСТРОЙСТВА')  # TM exact: sermoon-p1s P3
 t('P3b19', html='<b>1.1 Компоненты сканера</b>')  # TM exact: sermoon-p1s P3b1
 # P3b23  sz4.0  (404.9, 69.9, 436.4, 81.3)
 # EN: Single-Line Laser
-t('P3b23', html='Одиночный лазер')
+t('P3b23', html='Лазер одиночной линии')
 # P3b22  sz4.0  (377.7, 75.9, 415.1, 87.3)
 # EN: Infrared Fill Light×4
 t('P3b22', html='ИК-подсветка × 4')
 # P3b24  sz4.0  (419.6, 83.6, 453.4, 95.0)
 # EN: Parallel-Line Laser
-t('P3b24', html='Паралл. лазер')
+t('P3b24', html='Лазер паралл.')
 # P3b21  sz4.0  (393.5, 85.2, 416.5, 96.6)
 # EN: RGB Camera
 t('P3b21', html='RGB-камера')  # TM exact: sermoon-p1s P3b9
@@ -71,7 +71,7 @@ t('P3b26', html='DOE-проектор')  # TM exact: sermoon-p1s P3b13
 t('P3b32', html='Сенсорный HD-экран')  # TM exact: sermoon-p1s P3b2
 # P3b25  sz4.0  (426.0, 91.7, 456.2, 103.2)
 # EN: Cross-Line Laser
-t('P3b25', html='Перекр. лазер')
+t('P3b25', html='Лазер перекр.')
 # P3b33  sz4.0  (225.5, 100.8, 250.7, 112.2)
 # EN: Power Button
 t('P3b33', html='Кнопка питания')  # TM exact: sermoon-p1s P3b3
@@ -284,7 +284,7 @@ t('P16b3', html='Подробные инструкции по обработке
 t('P17b3', html='3. ПОДРОБНОЕ ОПИСАНИЕ РЕЖИМОВ СКАНИРОВАНИЯ')  # TM exact: sermoon-p1s P19b3
 # P17b0  sz6.0 B  (50.1, 68.4, 515.3, 157.4)
 # EN: <span style="font-size:7.0px"><b>3.1 Blue Laser Mode</b></span> Suitable for scanning objects requiring high accuracy and rich details, it usually needs to be used with markers. ● Cross Line Laser: ○ Features: Fast scanning speed and high efficiency. ○ Applicable scenarios: Scanning large objects. It is necessary to attach markers directly to the object's surface. ● Parallel Line Laser: ○ Features: Best details. ○ Applicable scenarios: For detailed scanning of objects, resulting in richer model details . If the object is small, markers can be placed on the table around the object. ● Single Line Laser: ○ Features: Excellent at capturing hard-to-reach areas such as deep holes and grooves. ○ Applicable scenarios: Supplemental scanning of objects with deep hole features.
-t('P17b0', html='<span style="font-size:7px"><b>3.1 Режим синего лазера</b></span><br>Подходит для сканирования объектов, требующих высокой точности и детализации; обычно используется с маркерами.<br>● Перекрёстный лазер:<br>○ Особенности: высокая скорость и эффективность сканирования.<br>○ Применение: сканирование крупных объектов. Маркеры необходимо наносить прямо на поверхность объекта.<br>● Параллельный лазер:<br>○ Особенности: лучшая детализация.<br>○ Применение: детальное сканирование объектов с богатой детализацией модели. Для малых объектов маркеры можно разместить на столе вокруг объекта.<br>● Одиночный лазер:<br>○ Особенности: отлично захватывает труднодоступные участки, такие как глубокие отверстия и канавки.<br>○ Применение: дополнительное сканирование объектов с глубокими отверстиями.')  # TM exact: sermoon-p1/legacy P17b0
+t('P17b0', html='<span style="font-size:7px"><b>3.1 Режим синего лазера</b></span><br>Подходит для сканирования объектов, требующих высокой точности и детализации; обычно используется с маркерами.<br>● Лазер перекрёстных линий:<br>○ Особенности: высокая скорость и эффективность сканирования.<br>○ Применение: сканирование крупных объектов. Маркеры необходимо наносить прямо на поверхность объекта.<br>● Лазер параллельных линий:<br>○ Особенности: лучшая детализация.<br>○ Применение: детальное сканирование объектов с богатой детализацией модели. Для малых объектов маркеры можно разместить на столе вокруг объекта.<br>● Лазер одиночной линии:<br>○ Особенности: отлично захватывает труднодоступные участки, такие как глубокие отверстия и канавки.<br>○ Применение: дополнительное сканирование объектов с глубокими отверстиями.')  # TM exact: sermoon-p1/legacy P17b0
 # P17b1  sz6.0 B  (50.1, 164.4, 547.5, 205.4)
 # EN: <span style="font-size:7.0px"><b>Tips:</b></span> ● Real-Time Resolution: The smaller the resolution, the finer the model. However, this will occupy more computer memory and may affect scanning smoothness. Please select according to your computer performance and model requirements. ● Alignment: If you need to scan multiple sides of an object (such as the front and back), you can scan them in multiple steps and then use the software's "Alignment" function to combine them into a complete model.
 t('P17b1', html='<span style="font-size:7px"><b>Советы:</b></span><br>● Разрешение в реальном времени: чем меньше разрешение, тем детальнее модель. Однако это занимает больше памяти компьютера и может влиять на плавность сканирования. Выбирайте в зависимости от производительности компьютера и требований к модели.<br>● Выравнивание: если нужно отсканировать несколько сторон объекта (например, перёд и зад), сканируйте их в несколько этапов, а затем используйте функцию «Alignment» (Выравнивание) в ПО, чтобы объединить их в единую модель.')  # TM exact: sermoon-p1/legacy P17b1
